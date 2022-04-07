@@ -46,26 +46,26 @@ export default function Footer() {
                             color="#8C8B8F"
                           // style={{ textAlign: "left" }}
                           >
-                            Millions of local menus.Share food with friends and discover new favorites.
+                            Millions of local menus. Share food with friends and discover new favorites.
                           </Text>
                           {/* </Row> */}
                         </Grid>
                         <Grid xs={4}>
-                          <Image
+                          {/* <Image
                             width={320}
                             height={215}
                             src="images/food.png"
                             alt="Default Image"
                             objectFit="cover"
-                          />
+                          /> */}
 
-                          {/* <Card.Image
+                          <Card.Image
                             src="images/food.png"
                             alt="Default Image"
                             width={300}
                             height={300}
                             style={{ textAlign: "left" }}
-                          /> */}
+                          />
 
                         </Grid>
                       </Grid.Container>

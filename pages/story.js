@@ -162,7 +162,7 @@ export default function story() {
       <Container responsive >
         <Grid.Container gap={2} justify="center">
           <div className="slide">
-            <a href="/">
+            <Link href="/">
               <div className="slide-items">
                 {images.map((image, key) => (
                   <img
@@ -174,7 +174,7 @@ export default function story() {
                 ))
                 }
               </div>
-            </a>
+            </Link>
             <nav className="slide-nav">
               <div className="slide-thumb">
                 {
