@@ -1,4 +1,4 @@
-import { Card, Grid, Container, Row } from "@nextui-org/react";
+import { Card, Grid, Container, Row, Link, } from "@nextui-org/react";
 import CardContent from "./CardContent";
 
 export default function Cards() {
@@ -49,28 +49,29 @@ export default function Cards() {
     <Container responsive >
       <Grid.Container gap={2} justify="center">
         {list.map((item, index) => (
-          <Grid xs={12} sm={4} xl={4} md={3} key={index}>
-            <Card css={{ bg: "$black", w: "100%" }}>
-              <Card.Image
-                src="https://nextui.org/images/card-example-2.jpeg"
-                height={340}
-                width="100%"
-                alt="Card image background"
-              />
-              <Card.Footer
-                blur
-                css={{
-                  position: "absolute",
-                  bgBlur: "#ffffff",
-                  // borderTop: "$borderWeights$light solid rgba(255, 255, 255, 0.2)",
-                  bottom: 0,
-                  zIndex: 1,
-                  background: "transparent",
-                }}
-              >
-                <CardContent />
-              </Card.Footer>
-            </Card>
+          <Grid xs={12} sm={4} xl={4} md={3} key={index} >
+            <Link href="/story">
+              <Card css={{ bg: "$black", w: "100%" }} >
+                <Card.Image
+                  src="https://nextui.org/images/card-example-2.jpeg"
+                  height={340}
+                  width="100%"
+                  alt="Card image background"
+                />
+                <Card.Footer
+                  blur
+                  css={{
+                    position: "absolute",
+                    bgBlur: "#ffffff",
+                    bottom: 0,
+                    zIndex: 1,
+                    background: "transparent",
+                  }}
+                >
+                  <CardContent />
+                </Card.Footer>
+              </Card>
+            </Link>
           </Grid>
         ))}
       </Grid.Container>

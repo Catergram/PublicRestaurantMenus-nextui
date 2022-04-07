@@ -1,4 +1,4 @@
-import { Button, Card, Col, Container, Grid, Row, Spacer, Text } from "@nextui-org/react";
+import { Button, Card, Col, Container, Grid, Image, Row, Spacer, Text } from "@nextui-org/react";
 import FooterCardRight from "./FooterCardRight";
 
 export default function Footer() {
@@ -51,19 +51,22 @@ export default function Footer() {
                           {/* </Row> */}
                         </Grid>
                         <Grid xs={4}>
-                          <Card.Image
-                            src="images/food-delivery.png"
+                          <Image
+                            width={320}
+                            height={215}
+                            src="images/food.png"
                             alt="Default Image"
-                            width={186}
-                            height={174}
+                            objectFit="cover"
+                          />
+
+                          {/* <Card.Image
+                            src="images/food.png"
+                            alt="Default Image"
+                            width={300}
+                            height={300}
                             style={{ textAlign: "left" }}
-                          />
-                          <Card.Image
-                            src="images/arrow.png"
-                            alt="Default Image"
-                            width={186}
-                            height={174}
-                          />
+                          /> */}
+
                         </Grid>
                       </Grid.Container>
                     </Card.Body>

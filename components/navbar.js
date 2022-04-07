@@ -38,43 +38,45 @@ const Navbar = ({ isHome, hasNotify, routes }) => {
   const showBlur = !!expanded || !!detached || isHome;
 
   return (
-    <StyledNavMainContainer id="navbar-container">
-      <StyledNavContainer style={{ color: '#fff' }} detached={detached} showBlur={showBlur}>
-        <Container
-          lg={true}
-          as="nav"
-          display="flex"
-          wrap="nowrap"
-          alignItems="center"
-        >
-          <Col
-            className="navbar__logo-contain"
-            css={{
-              '@mdMax': {
-                width: '100%'
-              }
-            }}
-          >
-            <Row justify="flex-start" align="center">
-              <NextLink href="/">
-                <Link href="/">
-                  <Image
-                    width={128}
-                    height={172}
-                    src="images/macd.png" />
-                </Link>
-              </NextLink>
-              <Spacer x={0.4} />
+    <>
 
-            </Row>
-          </Col>
-          <Col
-            className="navbar__resources-container"
-            css={{ '@mdMax': { d: 'none' } }}
+      <StyledNavMainContainer id="navbar-container">
+        <StyledNavContainer style={{ color: '#fff' }} detached={detached} showBlur={showBlur}>
+          <Container
+            lg={true}
+            as="nav"
+            display="flex"
+            wrap="nowrap"
+            alignItems="center"
           >
-            <Row justify="center" align="center">
-              <Spacer x={1} y={0} />
-              {/* <NextLink href="/docs/guide/getting-started">
+            <Col
+              className="navbar__logo-contain"
+              css={{
+                '@mdMax': {
+                  width: '100%'
+                }
+              }}
+            >
+              <Row justify="flex-start" align="center">
+                <NextLink href="/">
+                  <Link href="/">
+                    <Image
+                      width={100}
+                      height={172}
+                      src="images/macd.png" />
+                  </Link>
+                </NextLink>
+                <Spacer x={0.4} />
+
+              </Row>
+            </Col>
+            <Col
+              className="navbar__resources-container"
+              css={{ '@mdMax': { d: 'none' } }}
+            >
+              <Row justify="center" align="center">
+                <Spacer x={1} y={0} />
+                {/* <NextLink href="/docs/guide/getting-started">
                 <Link
 
                   href="#"
@@ -89,8 +91,8 @@ const Navbar = ({ isHome, hasNotify, routes }) => {
                   Docs
                 </Link>
               </NextLink> */}
-              <Spacer x={1} y={0} />
-              {/* <NextLink href="/docs/components/avatar">
+                <Spacer x={1} y={0} />
+                {/* <NextLink href="/docs/components/avatar">
                 <Link
                   aria-disabled
 
@@ -106,8 +108,8 @@ const Navbar = ({ isHome, hasNotify, routes }) => {
                   Components
                 </Link>
               </NextLink> */}
-              <Spacer x={1} y={0} />
-              {/* <Link
+                <Spacer x={1} y={0} />
+                {/* <Link
                 className="navbar__link"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -119,90 +121,91 @@ const Navbar = ({ isHome, hasNotify, routes }) => {
               >
                 Feedback
               </Link> */}
-            </Row>
-          </Col>
-          <Col className="navbar__search-container">
-            <Row
-              className="navbar__search-row"
-              justify="flex-end"
-              align="center"
-              css={{
-                position: 'initial',
-                '@mdMax': {
-                  jc: 'center'
-                }
-              }}
-            >
+              </Row>
+            </Col>
+            <Col className="navbar__search-container">
               <Row
-                className="navbar__social-icons-container"
+                className="navbar__search-row"
                 justify="flex-end"
                 align="center"
-                gap={1}
                 css={{
-                  width: 'initial',
+                  position: 'initial',
                   '@mdMax': {
-                    d: 'none'
+                    jc: 'center'
                   }
                 }}
               >
-                <Link
-                  className="navbar__social-icon"
-                  href="https://twitter.com/getnextui"
-                  target="_blank"
-                  rel="noreferrer"
+                <Row
+                  className="navbar__social-icons-container"
+                  justify="flex-end"
+                  align="center"
+                  gap={1}
                   css={{
-                    m: '0 6px',
-                    '& svg': {
-                      transition: '$default'
-                    },
-                    '&:hover': {
-                      '& svg': {
-                        opacity: 0.7
-                      }
+                    width: 'initial',
+                    '@mdMax': {
+                      d: 'none'
                     }
                   }}
                 >
-                  {/* <Twitter size={24} /> */}
-                </Link>
-                <Link
-                  className="navbar__social-icon"
-                  href="https://discord.gg/9b6yyZKmH4"
-                  target="_blank"
-                  rel="noreferrer"
-                  css={{
-                    m: '0 6px',
-                    '& svg': {
-                      transition: '$default'
-                    },
-                    '&:hover': {
+                  <Link
+                    className="navbar__social-icon"
+                    href="https://twitter.com/getnextui"
+                    target="_blank"
+                    rel="noreferrer"
+                    css={{
+                      m: '0 6px',
                       '& svg': {
-                        opacity: 0.7
+                        transition: '$default'
+                      },
+                      '&:hover': {
+                        '& svg': {
+                          opacity: 0.7
+                        }
                       }
-                    }
-                  }}
-                >
-                  {/* <Discord size={24} /> */}
-                </Link>
-                <Link
-                  className="navbar__social-icon"
-                  href="https://github.com/nextui-org/nextui"
-                  target="_blank"
-                  rel="noreferrer"
-                  css={{
-                    m: '0 6px',
-                    '& svg': {
-                      transition: '$default'
-                    },
-                    '&:hover': {
+                    }}
+                  >
+                    {/* <Twitter size={24} /> */}
+                  </Link>
+                  <Link
+                    className="navbar__social-icon"
+                    href="https://discord.gg/9b6yyZKmH4"
+                    target="_blank"
+                    rel="noreferrer"
+                    css={{
+                      m: '0 6px',
                       '& svg': {
-                        opacity: 0.7
+                        transition: '$default'
+                      },
+                      '&:hover': {
+                        '& svg': {
+                          opacity: 0.7
+                        }
                       }
-                    }
-                  }}
-                >
-                  {/* <Github size={24} /> */}
-                </Link>
-                {/* <ThemeToggle
+                    }}
+                  >
+                    {/* <Discord size={24} /> */}
+                  </Link>
+                  <Link
+                    className="navbar__social-icon"
+                    href="https://github.com/nextui-org/nextui"
+                    target="_blank"
+                    rel="noreferrer"
+                    css={{
+                      m: '0 6px',
+                      '& svg': {
+                        transition: '$default'
+                      },
+                      '&:hover': {
+                        '& svg': {
+                          opacity: 0.7
+                        }
+                      }
+                    }}
+                  >
+                    {/* <Github size={24} /> */}
+
+                  </Link>
+                  {/* <ThemeToggle
                   className="navbar__social-icon"
                   css={{
                     m: '0 6px',
@@ -216,27 +219,28 @@ const Navbar = ({ isHome, hasNotify, routes }) => {
                     }
                   }}
                 /> */}
+                </Row>
+                {/* <SearchInput offsetTop={detached ? 0 : 30} /> */}
               </Row>
-              {/* <SearchInput offsetTop={detached ? 0 : 30} /> */}
-            </Row>
-          </Col>
-          <Col
-            className="navbar__menu-container"
-            css={{
-              size: '100%',
-              display: 'none',
-              '@mdMax': {
-                display: 'flex',
-                justifyContent: 'flex-end'
-              }
-            }}
-          >
+            </Col>
+            <Col
+              className="navbar__menu-container"
+              css={{
+                size: '100%',
+                display: 'none',
+                '@mdMax': {
+                  display: 'flex',
+                  justifyContent: 'flex-end'
+                }
+              }}
+            >
 
-          </Col>
+            </Col>
 
-        </Container>
-      </StyledNavContainer>
-    </StyledNavMainContainer>
+          </Container>
+        </StyledNavContainer>
+      </StyledNavMainContainer>
+    </>
   );
 };
 
