@@ -46,10 +46,10 @@ export default function Cards() {
   ];
 
   return (
-    <Container>
+    <Container responsive >
       <Grid.Container gap={2} justify="center">
         {list.map((item, index) => (
-          <Grid xs={12} sm={3} xl={10} key={index}>
+          <Grid xs={12} sm={4} xl={4} md={3} key={index}>
             <Card css={{ bg: "$black", w: "100%" }}>
               <Card.Image
                 src="https://nextui.org/images/card-example-2.jpeg"
