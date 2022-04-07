@@ -69,7 +69,7 @@ export default function CardContent() {
         </Row>
         <Row justify="flex-end">
           <Image
-            src="images/Like.svg"
+            src="images/like.svg"
             alt="Default Image"
             width={24}
             height={24}

@@ -1,6 +1,6 @@
 import Cards from '@components/Card';
 import { Grid, Card, Text, Container } from "@nextui-org/react";
-import Navbar from './navbar';
+import Navbar from '../components/navbar';
 
 export default function IndexPage() {
 
