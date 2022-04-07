@@ -1,4 +1,6 @@
 import Layout from '@components/Layout'
+import { Card, Container, Grid } from '@nextui-org/react';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 const images = [
@@ -37,6 +39,48 @@ export default function story() {
     return () => clearInterval(timer);
   }, [active]);
 
+  const list = [
+    {
+      title: "Orange",
+      img: "/images/fruit-1.jpeg",
+      price: "$5.50",
+    },
+    {
+      title: "Tangerine",
+      img: "/images/fruit-2.jpeg",
+      price: "$3.00",
+    },
+    {
+      title: "Raspberry",
+      img: "/images/fruit-3.jpeg",
+      price: "$10.00",
+    },
+    {
+      title: "Lemon",
+      img: "/images/fruit-4.jpeg",
+      price: "$5.30",
+    },
+    {
+      title: "Advocato",
+      img: "/images/fruit-5.jpeg",
+      price: "$15.70",
+    },
+    {
+      title: "Lemon 2",
+      img: "/images/fruit-6.jpeg",
+      price: "$8.00",
+    },
+    {
+      title: "Banana",
+      img: "/images/fruit-7.jpeg",
+      price: "$7.50",
+    },
+    {
+      title: "Watermelon",
+      img: "/images/fruit-8.jpeg",
+      price: "$12.20",
+    },
+  ];
   return (
     <>
       <style jsx global>
@@ -69,6 +113,7 @@ export default function story() {
           -webkit-appearance: none;
           -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
           opacity: 0;
+          width: 10px;
         }
         .slide-items > * {
           position: absolute;
@@ -103,6 +148,9 @@ export default function story() {
           transform: translateX(-100%);
           animation: thumb 5s forwards linear;
         }
+        .slide-next{
+          margin-left: 5rem;
+        }
         @keyframes thumb {
           to {
             transform: initial;
@@ -111,44 +159,49 @@ export default function story() {
       `
         }
       </style>
-      <div className="slide">
-        <div className="slide-items">
-          {
-            images.map((image, key) => (
-              <img
-                key={key}
-                src={image}
-                alt={`unsplash ${key}`}
-                className={`${key === active ? 'active' : ''}`}
-              />
-            ))
-          }
-        </div>
-        <nav className="slide-nav">
-          <div className="slide-thumb">
-            {
-              images.map((image, key) => (
-                <span
-                  key={key}
-                  className={`${key === active ? 'active' : ''}`}
-                />
-              ))
-            }
+      <Container responsive >
+        <Grid.Container gap={2} justify="center">
+          <div className="slide">
+            <a href="/">
+              <div className="slide-items">
+                {images.map((image, key) => (
+                  <img
+                    key={key}
+                    src={image}
+                    alt={`unsplash ${key}`}
+                    className={`${key === active ? 'active' : ''}`}
+                  />
+                ))
+                }
+              </div>
+            </a>
+            <nav className="slide-nav">
+              <div className="slide-thumb">
+                {
+                  images.map((image, key) => (
+                    <span
+                      key={key}
+                      className={`${key === active ? 'active' : ''}`}
+                    />
+                  ))
+                }
+              </div>
+              <button
+                className="slide-prev"
+                onClick={prev}
+              >
+                Prev
+              </button>
+              <button
+                onClick={next}
+                className="slide-next"
+              >
+                Next
+              </button>
+            </nav>
           </div>
-          <button
-            className="slide-prev"
-            onClick={prev}
-          >
-            Prev
-          </button>
-          <button
-            onClick={next}
-            className="slide-next"
-          >
-            Next
-          </button>
-        </nav>
-      </div>
+        </Grid.Container>
+      </Container >
     </>
   )
 }
