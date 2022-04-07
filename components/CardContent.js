@@ -1,4 +1,4 @@
-import { Text, Col, Row, Image, Grid } from "@nextui-org/react";
+import { Text, Col, Row, Image, Grid, Button, Container } from "@nextui-org/react";
 
 export default function CardContent() {
   return (
@@ -17,49 +17,41 @@ export default function CardContent() {
             </Text>
           </Col>
           <Col>
-            <Grid.Container gap={2}>
-              <Grid>
-                <Image
-                  width={17}
-                  height={17}
-                  src="images/carousel-logo-1.svg" />
-              </Grid>
-            </Grid.Container>
+            <Grid xs sm md lg xl>
+              <Image
+                width={17}
+                height={17}
+                src="images/carousel-logo-1.svg" />
+            </Grid>
           </Col>
           <Col>
-            <Grid.Container gap={2}>
-              <Grid>
-                <Image
-                  width={17}
-                  height={17}
-                  src="images/carousel-logo-uber.svg" />
-              </Grid>
-            </Grid.Container>
+            <Grid xs sm md lg xl>
+              <Image
+                width={17}
+                height={17}
+                src="images/carousel-logo-uber.svg" />
+            </Grid>
           </Col>
           <Col>
-            <Grid.Container gap={2}>
-              <Grid>
-                <Image
-                  width={17}
-                  height={17}
-                  src="images/carousel-logo-Grubhub.svg" />
-              </Grid>
-            </Grid.Container>
+            <Grid xs sm md lg xl >
+              <Image
+                width={17}
+                height={17}
+                src="images/carousel-logo-Grubhub.svg" />
+            </Grid>
           </Col>
           <Col>
-            <Grid.Container gap={2}>
-              <Grid>
-                <Image
-                  width={17}
-                  height={17}
-                  src="images/carousel-logo-2.svg" />
-              </Grid>
-            </Grid.Container>
+            <Grid xs sm md lg xl>
+              <Image
+                width={17}
+                height={17}
+                src="images/carousel-logo-2.svg" />
+            </Grid>
           </Col>
         </Row>
       </Col>
       <Col>
-        <Row justify="flex-end">
+        <Row justify="center" align="flex-start" gap={0} style={{ margin: "12px 0" }}>
           <Image
             src="images/share.svg"
             alt="Default Image"
@@ -67,7 +59,7 @@ export default function CardContent() {
             height={24}
           />
         </Row>
-        <Row justify="flex-end">
+        <Row justify="center" align="flex-start" >
           <Image
             src="images/like.svg"
             alt="Default Image"
@@ -76,6 +68,7 @@ export default function CardContent() {
           />
         </Row>
       </Col>
-    </Row >
+    </Row>
+
   )
 }

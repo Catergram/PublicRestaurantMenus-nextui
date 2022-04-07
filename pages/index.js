@@ -1,4 +1,5 @@
 import Cards from '@components/Card';
+import Footer from '@components/Footer';
 import { Grid, Card, Text, Container } from "@nextui-org/react";
 import Navbar from '../components/navbar';
 
@@ -30,7 +31,7 @@ export default function IndexPage() {
           {/* <MockItem text="3 of 3" /> */}
         </Grid>
       </Grid.Container>
-
+      <Footer />
     </>
   )
 
