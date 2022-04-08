@@ -2,6 +2,7 @@ import Cards from '@components/Card';
 import Footer from '@components/Footer';
 import { Grid, Card, Text, Container } from "@nextui-org/react";
 import Navbar from '../components/navbar';
+import Dropdown from './dropdown';
 
 export default function IndexPage() {
 
@@ -19,7 +20,8 @@ export default function IndexPage() {
     <>
       {/* <Header /> */}
       {/* <Cards /> */}
-      <Navbar />
+      {/* <Navbar /> */}
+      <Dropdown />
       <Grid.Container gap={2} justify="center">
         <Grid xs={1}>
           {/* <MockItem text="1 of 3" /> */}

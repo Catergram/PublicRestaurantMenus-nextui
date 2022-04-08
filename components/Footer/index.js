@@ -1,16 +1,10 @@
+import { useMediaQuery } from "@components/useMediaQuery";
 import { Button, Card, Col, Container, Grid, Image, Row, Spacer, Text } from "@nextui-org/react";
 import FooterCardRight from "./FooterCardRight";
 
 export default function Footer() {
-  const MockItem = ({ text }) => {
-    return (
-      <Card color="primary" >
-        <Text h6 size={15} color="white" >
-          {text}
-        </Text>
-      </Card>
-    );
-  };
+  const isSm = useMediaQuery(650);
+
   return (
     <>
       <div style={{ background: "#F5F5F5" }}>
@@ -19,11 +13,11 @@ export default function Footer() {
             <Grid.Container gap={2} justify="center">
               <Grid sm md lg={8} xs>
                 <Row justify="center" align="center">
-                  <Card style={{ background: "transparent", boxShadow: "none", textAlign: "center" }}>
-                    <Card.Header>
+                  <Card style={{ background: "transparent", boxShadow: "none", textAlign: "center", border: "none" }}>
+                    <Card.Body>
                       <Col>
                         <Text
-                          size={64}
+                          size={isSm ? 59 : 64}
                           weight="bold"
                           color="#211D27"
                           style={{
@@ -35,39 +29,41 @@ export default function Footer() {
                           Discover all the delicous local food.
                         </Text>
                       </Col>
-                    </Card.Header>
-                    <Card.Body css={{ py: "$10" }}>
-                      <Grid.Container gap={2} justify="center">
-                        <Grid xs={8}>
-                          {/* <Row justify="flex-end"> */}
-                          <Text
-                            size={30}
-                            weight="light"
-                            color="#8C8B8F"
-                          // style={{ textAlign: "left" }}
-                          >
-                            Millions of local menus. Share food with friends and discover new favorites.
-                          </Text>
-                          {/* </Row> */}
-                        </Grid>
-                        <Grid xs={4}>
-                          {/* <Image
-                            width={320}
-                            height={215}
-                            src="images/food.png"
-                            alt="Default Image"
-                            objectFit="cover"
-                          /> */}
-
-                          <Card.Image
-                            src="images/food.png"
-                            alt="Default Image"
-                            width={300}
-                            height={300}
-                            style={{ textAlign: "left" }}
-                          />
-
-                        </Grid>
+                    </Card.Body>
+                    <Card.Body >
+                      <Grid.Container justify="center">
+                        <Row>
+                          <Col span={12}>
+                            {/* <Grid direction="column"> */}
+                            <Text
+                              size={30}
+                              weight="light"
+                              color="#8C8B8F"
+                            // style={{ textAlign: "left" }}
+                            >
+                              Millions of local menus. Share food with friends and discover new favorites.
+                            </Text>
+                            {/* </Grid> */}
+                          </Col>
+                          <Col span={6} style={{ margin: '0' }}>
+                            {/* <Image
+                              src="images/food.png"
+                              alt="Default Image"
+                              height={150}
+                              width={250}
+                            // style={{ width: "320px", height: "150px" }}
+                            /> */}
+                            {/* <Grid direction="column"> */}
+                            <Card.Image
+                              src="images/food.png"
+                              alt="Default Image"
+                              style={{ width: "320px", height: "150px" }}
+                              width={300}
+                              height={100}
+                            />
+                            {/* </Grid> */}
+                          </Col>
+                        </Row>
                       </Grid.Container>
                     </Card.Body>
                     <Card.Body css={{ py: "$10" }}>
