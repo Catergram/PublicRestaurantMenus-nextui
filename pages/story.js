@@ -11,7 +11,7 @@ const images = [
   'https://unsplash.it/230/344?id=5',
 ]
 
-export default function story() {
+export default function Story() {
   const [active, setActive] = useState(0)
 
   const activeSlide = (index) => {

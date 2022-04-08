@@ -13,25 +13,21 @@ import { Image } from '@nextui-org/react'
 
 const solutions = [
   {
-    name: 'Analytics',
+    name: 'BreakFast',
     href: '#',
     icon: ChartBarIcon,
   },
   {
-    name: 'Engagement',
+    name: 'Lunch',
     href: '#',
     icon: CursorClickIcon,
   },
   {
-    name: 'Integrations',
+    name: 'Dinner',
     href: '#',
     icon: ViewGridIcon,
   },
-  {
-    name: 'Automations',
-    href: '#',
-    icon: RefreshIcon,
-  },
+
 ]
 
 function classNames(...classes) {
@@ -62,7 +58,7 @@ export default function Dropdown() {
             </a>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
-            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none ">
               <span className="sr-only">Open menu</span>
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
@@ -74,14 +70,14 @@ export default function Dropdown() {
                   <Popover.Button
                     className={classNames(
                       open ? 'text-gray' : 'text-black',
-                      'group bg-white rounded-md inline-flex items-center text-base font-medium hover:black focus:outline-none  focus:ring-indigo-500'
+                      'group bg-white rounded-md inline-flex items-center text-base font-medium hover:black focus:outline-none  '
                     )}
                   >
                     <span className='font-semibold text-xl leading-snug' >FULL MENU</span>
                     <ChevronDownIcon
                       className={classNames(
                         open ? 'text-black-600' : 'text-black-400',
-                        'ml-2 h-5 w-5 group-hover:text-gray-500'
+                        'ml-2 h-5 w-5 '
                       )}
                       aria-hidden="true"
                     />
@@ -105,10 +101,10 @@ export default function Dropdown() {
                               href={item.href}
                               className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                             >
-                              <item.icon className="flex-shrink-0 h-6 w-6 text-indigo-600" aria-hidden="true" />
+                              {/* <item.icon className="flex-shrink-0 h-6 w-6 text-indigo-600" aria-hidden="true" /> */}
                               <div className="ml-4">
                                 <p className="text-base font-medium text-gray-900">{item.name}</p>
-                                <p className="mt-1 text-sm text-gray-500">{item.description}</p>
+                                {/*   <p className="mt-1 text-sm text-gray-500">{item.description}</p> */}
                               </div>
                             </a>
                           ))}
@@ -138,15 +134,15 @@ export default function Dropdown() {
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
                 <div>
-                  <Image
+                  {/* <Image
                     className="h-8 w-auto"
                     width={100}
                     height={172}
                     src="images/macd.png"
-                    alt="Workflow" />
+                    alt="Workflow" /> */}
                 </div>
                 <div className="-mr-2">
-                  <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                  <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none ">
                     <span className="sr-only">Close menu</span>
                     <XIcon className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>
@@ -160,7 +156,7 @@ export default function Dropdown() {
                       href={item.href}
                       className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                     >
-                      <item.icon className="flex-shrink-0 h-6 w-6 text-indigo-600" aria-hidden="true" />
+                      {/* <item.icon className="flex-shrink-0 h-6 w-6 text-indigo-600" aria-hidden="true" /> */}
                       <span className="ml-3 text-base font-medium text-gray-900">{item.name}</span>
                     </a>
                   ))}
