@@ -10,9 +10,10 @@ export default function CardContent() {
   const isSm = useMediaQuery(650);
 
   return (
+
     <>
       <Row>
-        <Col>
+        <Col className="card-text">
           <Text color="#fff" size={24}>
             Steak Dish
           </Text>
@@ -60,7 +61,7 @@ export default function CardContent() {
             </Row>
           </Grid.Container>
         </Col>
-        <Col>
+        <Col className='card-image'>
           <Row justify="center" align="flex-start" gap={0} style={{ margin: "12px 0" }}>
             <Image
               src="images/share.svg"
