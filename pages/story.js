@@ -84,7 +84,7 @@ export default function Story() {
   ];
   return (
     <>
-      <Container responsive className='h-screen w-full image-block'>
+      <Container responsive className='h-screen w-full image-block story-page-wrapper'>
         <Grid.Container gap={2} justify="center" className='image-grid m-auto block w-4/5 absolute top-2/4 left-2/4'>
           <div className="slide">
             <Link href="/">

@@ -121,47 +121,47 @@ export default function Cards() {
           opacity: 0;
           width: 10px;
         }
-        .slide-items > * {
-          position: absolute;
-          top: 0px;
-          opacity: 0;
-          pointer-events: none;
-        }
-        .slide-items > .active {
-          position: relative;
-          opacity: 1;
-          pointer-events: initial;
-        }
-        .slide-thumb {
-          display: flex;
-          grid-column: 1 / 3;
-        }
-        .slide-thumb > span {
-          flex: 1;
-          display: block;
-          height: 3px;
-          background: rgba(0, 0, 0, 0.4);
-          margin: 5px;
-          border-radius: 3px;
-          overflow: hidden;
-        }
-        .slide-thumb > span.active::after {
-          content: '';
-          display: block;
-          height: inherit;
-          background: rgba(255, 255, 255, 0.9);
-          border-radius: 3px;
-          transform: translateX(-100%);
-          animation: thumb 5s forwards linear;
-        }
-        .slide-next{
-          margin-left: 5rem;
-        }
-        @keyframes thumb {
-          to {
-            transform: initial;
-          }
-        }
+        // .slide-items > * {
+        //   position: absolute;
+        //   top: 0px;
+        //   opacity: 0;
+        //   pointer-events: none;
+        // }
+        // .slide-items > .active {
+        //   position: relative;
+        //   opacity: 1;
+        //   pointer-events: initial;
+        // }
+        // .slide-thumb {
+        //   display: flex;
+        //   grid-column: 1 / 3;
+        // }
+        // .slide-thumb > span {
+        //   flex: 1;
+        //   display: block;
+        //   height: 3px;
+        //   background: rgba(0, 0, 0, 0.4);
+        //   margin: 5px;
+        //   border-radius: 3px;
+        //   overflow: hidden;
+        // }
+        // .slide-thumb > span.active::after {
+        //   content: '';
+        //   display: block;
+        //   height: inherit;
+        //   background: rgba(255, 255, 255, 0.9);
+        //   border-radius: 3px;
+        //   transform: translateX(-100%);
+        //   animation: thumb 5s forwards linear;
+        // }
+        // .slide-next{
+        //   margin-left: 5rem;
+        // }
+        // @keyframes thumb {
+        //   to {
+        //     transform: initial;
+        //   }
+        // }
       `
         }
       </style>
@@ -188,8 +188,8 @@ export default function Cards() {
           {list.map((item, index) => (
             <Grid xs={12} sm={4} xl={4} md={3} key={index} >
               {/* <Card > */}
-
               <div className="slide">
+                <CardContent />
                 {/* <Link href="/"> */}
                 <div className="slide-items">
                   {images.map((image, key) => (
@@ -214,8 +214,6 @@ export default function Cards() {
                         />
                       ))
                     }
-                    <CardContent />
-
                   </div>
                   <button
                     className="slide-prev"
