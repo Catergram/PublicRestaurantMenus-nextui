@@ -1,8 +1,8 @@
 import Cards from '@components/Card';
 import Footer from '@components/Footer';
+import Dropdown from '@components/Header';
 import { Grid } from "@nextui-org/react";
 
-import Dropdown from './dropdown';
 
 export default function IndexPage() {
 

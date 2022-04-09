@@ -5,9 +5,6 @@
 .nav-bar-header{
   z-index: 99999;
 }
-.card-container{
-  margin-top: 4.5rem;
-}
 
 .slide-thumb {
   display: flex;

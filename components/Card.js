@@ -1,17 +1,20 @@
-import { Card, Grid, Container, Row, Col, Link, Button, Text, } from "@nextui-org/react";
+import { Card, Grid, Container, Row, Col } from "@nextui-org/react";
 import { useRouter } from "next/router";
 
 import CardContent from "./CardContent";
 import { useMediaQuery } from "./useMediaQuery";
 
 const images = [
-  'https://nextui.org/images/card-example-2.jpeg',
-  'https://nextui.org/images/card-example-3.jpeg',
+  'https://unsplash.it/597/796?id=1',
+  'https://unsplash.it/230/344?id=2',
   'https://unsplash.it/230/344?id=3',
   'https://unsplash.it/230/344?id=4',
   'https://unsplash.it/230/344?id=5',
-]
+  'https://unsplash.it/230/344?id=6',
+  'https://unsplash.it/230/344?id=7',
+  'https://unsplash.it/230/344?id=8',
 
+]
 
 export default function Cards() {
   const router = useRouter()
@@ -19,7 +22,7 @@ export default function Cards() {
 
   return (
     <>
-      <Container responsive >
+      <Container responsive css={{ marginTop: '4.5rem' }}>
         <Row>
           <div>
             <Col span={isSm ? 12 : 5} >
