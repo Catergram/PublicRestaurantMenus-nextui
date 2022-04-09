@@ -69,6 +69,7 @@ export default function CardContent() {
               width={24}
               height={24}
               onClick={() => SetIsOpen(!isOpen)}
+              className="cursor-pointer"
             />
           </Row>
           <Row justify="center" align="flex-start" >
@@ -78,6 +79,7 @@ export default function CardContent() {
               width={24}
               height={24}
               onClick={() => SetIsOpen(!isOpen)}
+              className="cursor-pointer"
             />
           </Row>
         </Col>

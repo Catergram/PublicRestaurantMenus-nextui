@@ -36,8 +36,8 @@ function classNames(...classes) {
 
 export default function Dropdown() {
   return (
-    <Popover className="relative bg-white ">
-      <div className="max-w-full mx-auto px-4 sm:px-6 " style={{ boxShadow: "rgb(2 1 1 / 10%) 0px 5px 20px -5px" }}>
+    <Popover className="bg-white fixed w-full top-0 nav-bar-header">
+      <div className="max-w-full mx-auto px-4 sm:px-6" style={{ boxShadow: "rgb(2 1 1 / 10%) 0px 5px 20px -5px" }}>
         <div className="flex justify-between items-center  py-2 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="#">
@@ -167,5 +167,6 @@ export default function Dropdown() {
         </Popover.Panel>
       </Transition>
     </Popover >
+
   )
 }

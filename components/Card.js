@@ -121,47 +121,47 @@ export default function Cards() {
           opacity: 0;
           width: 10px;
         }
-        // .slide-items > * {
-        //   position: absolute;
-        //   top: 0px;
-        //   opacity: 0;
-        //   pointer-events: none;
-        // }
-        // .slide-items > .active {
-        //   position: relative;
-        //   opacity: 1;
-        //   pointer-events: initial;
-        // }
-        // .slide-thumb {
-        //   display: flex;
-        //   grid-column: 1 / 3;
-        // }
-        // .slide-thumb > span {
-        //   flex: 1;
-        //   display: block;
-        //   height: 3px;
-        //   background: rgba(0, 0, 0, 0.4);
-        //   margin: 5px;
-        //   border-radius: 3px;
-        //   overflow: hidden;
-        // }
-        // .slide-thumb > span.active::after {
-        //   content: '';
-        //   display: block;
-        //   height: inherit;
-        //   background: rgba(255, 255, 255, 0.9);
-        //   border-radius: 3px;
-        //   transform: translateX(-100%);
-        //   animation: thumb 5s forwards linear;
-        // }
-        // .slide-next{
-        //   margin-left: 5rem;
-        // }
-        // @keyframes thumb {
-        //   to {
-        //     transform: initial;
-        //   }
-        // }
+        .slide-items > * {
+          position: absolute;
+          top: 0px;
+          opacity: 0;
+          pointer-events: none;
+        }
+        .slide-items > .active {
+          position: relative;
+          opacity: 1;
+          pointer-events: initial;
+        }
+        .slide-thumb {
+          display: flex;
+          grid-column: 1 / 3;
+        }
+        .slide-thumb > span {
+          flex: 1;
+          display: block;
+          height: 3px;
+          background: rgba(0, 0, 0, 0.4);
+          margin: 5px;
+          border-radius: 3px;
+          overflow: hidden;
+        }
+        .slide-thumb > span.active::after {
+          content: '';
+          display: block;
+          height: inherit;
+          background: rgba(255, 255, 255, 0.9);
+          border-radius: 3px;
+          transform: translateX(-100%);
+          animation: thumb 5s forwards linear;
+        }
+        .slide-next{
+          margin-left: 5rem;
+        }
+        @keyframes thumb {
+          to {
+            transform: initial;
+          }
+        }
       `
         }
       </style>
@@ -185,113 +185,17 @@ export default function Cards() {
           </div>
         </Row>
         <Grid.Container gap={2} justify="center" >
-          {list.map((item, index) => (
-            <Grid xs={12} sm={4} xl={4} md={3} key={index} >
-              {/* <Card > */}
-              <div className="slide">
-                <CardContent />
-                {/* <Link href="/"> */}
-                <div className="slide-items">
-                  {images.map((image, key) => (
-                    <img
-                      key={key}
-                      src={image}
-                      height={100}
-                      alt={`unsplash ${key}`}
-                      className={`${key === active ? 'active' : ''}`}
-                    />
-                  ))}
-                </div>
-                {/* </Link> */}
-
-                <nav className="slide-nav">
-                  <div className="slide-thumb">
-                    {
-                      images.map((image, key) => (
-                        <span
-                          key={key}
-                          className={`${key === active ? 'active' : ''}`}
-                        />
-                      ))
-                    }
-                  </div>
-                  <button
-                    className="slide-prev"
-                    onClick={prev}
-                  >
-                    Prev
-                  </button>
-                  <button
-                    onClick={next}
-                    className="slide-next"
-                  >
-                    Next
-                  </button>
-                  {/* <Card.Footer blur
-                    css={{
-                      position: "absolute",
-                      bgBlur: "#ffffff",
-                      bottom: 0,
-                      zIndex: 1,
-                      background: "transparent",
-                      backdropFilter: "none"
-                    }}
-                  >
-                </Card.Footer> */}
-                </nav>
-              </div>
-              {/* </Card > */}
-
-              {/* <Card.Footer blur
-                css={{
-                  position: "absolute",
-                  bgBlur: "#ffffff",
-                  bottom: 0,
-                  zIndex: 1,
-                  background: "transparent",
-                  backdropFilter: "none"
-                }}
-              >
-                <CardContent />
-              </Card.Footer> */}
-              {/* </Card> */}
-              {/* <Card css={{ bg: "$black", w: "100%" }}>
+          {
+            list.map((item, index) => (
+              <Grid xs={12} sm={4} xl={4} md={3} key={index} >
+                <Card css={{ bg: "$black", w: "100%" }}>
                   <Link href="/story">
-                    <div className="slide-items">
-                      {images.map((image, key) => (
-                        <img
-                          key={key}
-                          src={image}
-                          alt={`unsplash ${key}`}
-                          className={`${key === active ? 'active' : ''}`}
-                        />
-                      ))
-                      }
-                    </div>
-                    <nav className="slide-nav">
-                      <div className="slide-thumb">
-                        {
-                          images.map((image, key) => (
-                            <span
-                              key={key}
-                              className={`${key === active ? 'active' : ''}`}
-                            />
-                          ))
-                        }
-                      </div>
-                      <button
-                        className="slide-prev"
-                        onClick={prev}
-                      >
-                        Prev
-                      </button>
-                      <button
-                        onClick={next}
-                        className="slide-next"
-                      >
-                        Next
-                      </button>
-                    </nav>
+                    <Card.Image
+                      src="https://nextui.org/images/card-example-2.jpeg"
+                      height={340}
+                      width="100%"
+                      alt="Card image background"
+                    />
                   </Link>
                   <Card.Footer blur
                     css={{
@@ -304,9 +208,9 @@ export default function Cards() {
                   >
                     <CardContent />
                   </Card.Footer>
-                </Card> */}
-            </Grid>
-          ))
+                </Card>
+              </Grid>
+            ))
           }
         </Grid.Container >
       </Container >
