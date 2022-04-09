@@ -56,7 +56,6 @@ export default function Story() {
                 { height: 500 }
             }
             cover
-            onClick={() => router.push('/story')}
             className="p-0 border-0"
           >
             <Card.Header css={{ position: "absolute", zIndex: 1, top: 0 }}>
@@ -85,7 +84,7 @@ export default function Story() {
             />
             <Card.Footer css={{ position: "absolute", zIndex: 1, bottom: 5 }}>
               <Col>
-                <CardContent />
+                <CardContent storyButton={true} />
               </Col>
             </Card.Footer>
           </Card>

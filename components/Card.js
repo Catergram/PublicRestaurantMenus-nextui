@@ -50,6 +50,7 @@ export default function Cards() {
                     src={image}
                     height={340}
                     width="100%"
+                    className="cursor-pointer"
                     alt="Card image background"
                   />
                   <Card.Footer css={{ position: "absolute", zIndex: 1, bottom: 5 }}>
