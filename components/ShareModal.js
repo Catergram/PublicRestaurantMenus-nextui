@@ -1,13 +1,13 @@
 import React from "react";
 import { Modal, Input, Row, Checkbox, Button, Text } from "@nextui-org/react";
 
-export default function ShareModal({ isOpen }) {
+export default function ShareModal({ isOpen, handleClose }) {
   return (
     <div>
       <Modal
         blur
         open={isOpen}
-        onClose={!isOpen}
+        onClose={handleClose}
         className="bg-transparent shadow-none"
       >
         <Modal.Header>

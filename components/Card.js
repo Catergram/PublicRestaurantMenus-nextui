@@ -44,14 +44,17 @@ export default function Cards() {
         <Grid.Container gap={2} justify="center" >
           {
             images.map((image, index) => (
-              <Grid xs={12} sm={4} xl={4} md={3} key={index} >
-                <Card cover onClick={() => router.push('/story')}>
+              <Grid xs={12} sm={4} xl={4} md={3} key={index}>
+                <Card cover>
                   <Card.Image
                     src={image}
                     height={340}
                     width="100%"
                     className="cursor-pointer"
                     alt="Card image background"
+                    onClick={() => {
+                      router.push('/story')
+                    }}
                   />
                   <Card.Footer css={{ position: "absolute", zIndex: 1, bottom: 5 }}>
                     <Col>

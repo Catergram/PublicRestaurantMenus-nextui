@@ -6,11 +6,14 @@ import { useMediaQuery } from "./useMediaQuery";
 
 
 export default function CardContent({ storyButton }) {
-  const [isOpen, SetIsOpen] = useState(undefined)
+  const [isOpen, SetIsOpen] = useState(false)
   const isSm = useMediaQuery(650);
 
-  return (
+  const handleClose = () => {
+    SetIsOpen(false)
+  }
 
+  return (
     <>
       <Row>
         <Col className="card-text">
@@ -75,7 +78,7 @@ export default function CardContent({ storyButton }) {
                 alt="Default Image"
                 width={24}
                 height={24}
-                onClick={() => storyButton ? {} : SetIsOpen(!isOpen)}
+                onClick={() => SetIsOpen(!isOpen)}
 
                 className="cursor-pointer"
               />
@@ -86,7 +89,7 @@ export default function CardContent({ storyButton }) {
                 alt="Default Image"
                 width={24}
                 height={24}
-                onClick={() => storyButton ? {} : SetIsOpen(!isOpen)}
+                onClick={() => SetIsOpen(!isOpen)}
                 className="cursor-pointer"
               />
             </Row>
@@ -94,7 +97,7 @@ export default function CardContent({ storyButton }) {
         }
       </Row>
       {isOpen &&
-        <ShareModal isOpen={isOpen} />
+        <ShareModal isOpen={isOpen} handleClose={handleClose} />
       }
     </>
   )
