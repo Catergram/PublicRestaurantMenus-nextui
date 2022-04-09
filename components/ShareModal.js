@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Input, Row, Checkbox, Button, Text } from "@nextui-org/react";
+import { Modal, Row } from "@nextui-org/react";
 
 export default function ShareModal({ isOpen, handleClose }) {
   return (
@@ -14,6 +14,7 @@ export default function ShareModal({ isOpen, handleClose }) {
           <img
             src="./images/app-store.png"
             className="mb-4 footer-images"
+            alt=""
           />
         </Modal.Header>
         <Modal.Footer>
@@ -22,6 +23,7 @@ export default function ShareModal({ isOpen, handleClose }) {
               <img
                 className="footer-images"
                 src="./images/google-play.png"
+                alt=""
               />
             </div>
           </Row>

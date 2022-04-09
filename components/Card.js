@@ -13,7 +13,6 @@ const images = [
   'https://unsplash.it/230/344?id=6',
   'https://unsplash.it/230/344?id=7',
   'https://unsplash.it/230/344?id=8',
-
 ]
 
 export default function Cards() {
@@ -44,7 +43,7 @@ export default function Cards() {
         <Grid.Container gap={2} justify="center" >
           {
             images.map((image, index) => (
-              <Grid xs={12} sm={4} xl={4} md={3} key={index}>
+              <Grid xs={12} sm={4} xl={3} md={3} key={index}>
                 <Card cover>
                   <Card.Image
                     src={image}

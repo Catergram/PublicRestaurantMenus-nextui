@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from "next/router";
-import { Card, Col, Container, Grid } from '@nextui-org/react';
+import { Card, Col, Grid } from '@nextui-org/react';
 
 import CardContent from "@components/CardContent";
 import { useMediaQuery } from '@components/useMediaQuery';
@@ -44,7 +44,7 @@ export default function Story() {
         <div className="flex justify-end cursor-pointer" onClick={() => {
           router.push('/')
         }}>
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </div>
       }
       <Grid.Container gap={2} justify="center" className='p-0 border-0 p-0 m-0 w-full'>
@@ -89,7 +89,7 @@ export default function Story() {
                     <div className="flex justify-end cursor-pointer" onClick={() => {
                       router.push('/')
                     }}>
-                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                     </div>
                   }
                 </Col>
@@ -97,7 +97,7 @@ export default function Story() {
               <Card.Image
                 css={
                   isMobile ? { height: '100vh', borderRadius: 0 } :
-                    { height: '100%' }}
+                    { height: '100vh' }}
                 className={`border-0 h-full ${isMobile ? 'rounded-none' : ''}`}
                 src={images[active]}
                 width="100%"
