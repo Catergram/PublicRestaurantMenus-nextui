@@ -1,21 +1,24 @@
 import { useState } from 'react'
-import { Text, Col, Row, Image, Grid, Button, Container } from "@nextui-org/react";
+import { Text, Col, Row, Image, Grid } from "@nextui-org/react";
+import { useRouter } from "next/router";
+
 import ShareModal from "./ShareModal";
 import { useMediaQuery } from "./useMediaQuery";
 
-
-
 export default function CardContent({ storyButton }) {
-  const [isOpen, SetIsOpen] = useState(false)
+  const router = useRouter()
+  const [isOpen, setIsOpen] = useState(undefined)
   const isSm = useMediaQuery(650);
 
-  const handleClose = () => {
-    SetIsOpen(false)
+  const handleClose = (e) => {
+    setIsOpen(!isOpen)
   }
 
   return (
     <>
-      <Row>
+      <Row onClick={() => {
+        router.push('/story')
+      }}>
         <Col className="card-text">
           <Text color="#fff" size={24}>
             Steak Dish
@@ -78,9 +81,11 @@ export default function CardContent({ storyButton }) {
                 alt="Default Image"
                 width={24}
                 height={24}
-                onClick={() => SetIsOpen(!isOpen)}
-
                 className="cursor-pointer"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  handleClose()
+                }}
               />
             </Row>
             <Row justify="center" align="flex-start" >
@@ -89,15 +94,22 @@ export default function CardContent({ storyButton }) {
                 alt="Default Image"
                 width={24}
                 height={24}
-                onClick={() => SetIsOpen(!isOpen)}
                 className="cursor-pointer"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  handleClose()
+                }}
               />
             </Row>
           </Col>
         }
       </Row>
-      {isOpen &&
-        <ShareModal isOpen={isOpen} handleClose={handleClose} />
+
+      {!!isOpen &&
+        <ShareModal
+          isOpen={isOpen}
+          handleClose={handleClose}
+        />
       }
     </>
   )
