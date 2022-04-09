@@ -19,7 +19,7 @@ export default function CardContent({ storyButton }) {
       <Row onClick={() => {
         router.push('/story')
       }}>
-        <Col className="card-text">
+        <Col>
           <Text color="#fff" size={24}>
             Steak Dish
           </Text>
@@ -74,7 +74,7 @@ export default function CardContent({ storyButton }) {
           </Grid.Container>
         </Col>
         {!storyButton &&
-          <Col className='card-image'>
+          <Col>
             <Row justify="center" align="flex-start" gap={0} style={{ margin: "12px 0" }}>
               <Image
                 src="images/share.svg"
