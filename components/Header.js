@@ -3,10 +3,7 @@ import { Popover, Transition } from '@headlessui/react'
 import {
   ChartBarIcon,
   CursorClickIcon,
-  MenuIcon,
-  RefreshIcon,
   ViewGridIcon,
-  XIcon,
 } from '@heroicons/react/outline'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { Image } from '@nextui-org/react'
@@ -87,10 +84,8 @@ export default function Header() {
                               href={item.href}
                               className="-m-3 p-0 flex items-start rounded-lg hover:bg-gray-50"
                             >
-                              {/* <item.icon className="flex-shrink-0 h-6 w-6 text-indigo-600" aria-hidden="true" /> */}
                               <div className="ml-4">
                                 <p className="text-base font-medium text-gray-900">{item.name}</p>
-                                {/*   <p className="mt-1 text-sm text-gray-500">{item.description}</p> */}
                               </div>
                             </a>
                           ))}

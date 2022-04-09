@@ -1,30 +1,25 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { Image } from "@nextui-org/react";
 import NextLink from 'next/link';
-import dynamic from 'next/dynamic';
 import { Row, Col, Spacer, Link, useBodyScroll } from '@nextui-org/react';
 import { Container } from '@nextui-org/react';
 import { useRouter } from 'next/router';
 
 import { StyledNavContainer, StyledNavMainContainer } from './styles';
-import Dropdown from 'pages/dropdown';
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import {
   ChartBarIcon,
   CursorClickIcon,
-  MenuIcon,
   RefreshIcon,
   ViewGridIcon,
   XIcon,
 } from '@heroicons/react/outline'
 
-
 const Navbar = ({ isHome, hasNotify, routes }) => {
   const [expanded, setExpanded] = useState(false);
   const router = useRouter();
-  // const isMobile = useMediaQuery(960);
-  const [, setBodyHidden] = useBodyScroll(null, { scrollLayer: true });
+  const [,] = useBodyScroll(null, { scrollLayer: true });
   const [scrollPosition, setScrollPosition] = useState(
     (typeof window !== 'undefined' && window.pageYOffset) || 0
   );
@@ -47,26 +42,21 @@ const Navbar = ({ isHome, hasNotify, routes }) => {
   const solutions = [
     {
       name: 'Analytics',
-      // description: 'Get a better understanding of where your traffic is coming from.',
       href: '#',
       icon: ChartBarIcon,
     },
     {
       name: 'Engagement',
-      // description: 'Speak directly to your customers in a more meaningful way.',
       href: '#',
       icon: CursorClickIcon,
     },
-    // { name: 'Security', description: "Your customers' data will be safe and secure.", href: '#', icon: ShieldCheckIcon },
     {
       name: 'Integrations',
-      // description: "Connect with third-party tools that you're already using.",
       href: '#',
       icon: ViewGridIcon,
     },
     {
       name: 'Automations',
-      // description: 'Build strategic funnels that will drive your customers to convert',
       href: '#',
       icon: RefreshIcon,
     },
@@ -80,7 +70,6 @@ const Navbar = ({ isHome, hasNotify, routes }) => {
 
   return (
     <>
-
       <StyledNavMainContainer id="navbar-container">
         <StyledNavContainer style={{ color: '#fff' }} detached={detached} showBlur={showBlur}>
           <Container
@@ -116,51 +105,8 @@ const Navbar = ({ isHome, hasNotify, routes }) => {
             >
               <Row justify="center" align="center">
                 <Spacer x={1} y={0} />
-                {/* <NextLink href="/docs/guide/getting-started">
-                <Link
-
-                  href="#"
-                  css={{
-                    color: '$text',
-                    '&.active': {
-                      fontWeight: '600',
-                      color: '$primary'
-                    }
-                  }}
-                >
-                  Docs
-                </Link>
-              </NextLink> */}
                 <Spacer x={1} y={0} />
-                {/* <NextLink href="/docs/components/avatar">
-                <Link
-                  aria-disabled
-
-                  title="Components"
-                  css={{
-                    color: '$text',
-                    '&.active': {
-                      fontWeight: '600',
-                      color: '$primary'
-                    }
-                  }}
-                >
-                  Components
-                </Link>
-              </NextLink> */}
                 <Spacer x={1} y={0} />
-                {/* <Link
-                className="navbar__link"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://github.com/nextui-org/nextui/discussions/new?category=feedback"
-                title="Leave your feedback"
-                css={{
-                  color: '$text'
-                }}
-              >
-                Feedback
-              </Link> */}
               </Row>
             </Col>
             <Col className="navbar__search-container">
@@ -204,7 +150,6 @@ const Navbar = ({ isHome, hasNotify, routes }) => {
                       }
                     }}
                   >
-                    {/* <Twitter size={24} /> */}
                   </Link>
                   <Link
                     className="navbar__social-icon"
@@ -223,7 +168,6 @@ const Navbar = ({ isHome, hasNotify, routes }) => {
                       }
                     }}
                   >
-                    {/* <Discord size={24} /> */}
                   </Link>
                   <Link
                     className="navbar__social-icon"
@@ -242,7 +186,6 @@ const Navbar = ({ isHome, hasNotify, routes }) => {
                       }
                     }}
                   >
-                    {/* <Github size={24} /> */}
                   </Link>
                   <Popover className="relative">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -349,22 +292,7 @@ const Navbar = ({ isHome, hasNotify, routes }) => {
                       </Popover.Panel>
                     </Transition>
                   </Popover>
-                  {/* <ThemeToggle
-                  className="navbar__social-icon"
-                  css={{
-                    m: '0 6px',
-                    '& svg': {
-                      transition: '$default'
-                    },
-                    '&:hover': {
-                      '& svg': {
-                        opacity: 0.7
-                      }
-                    }
-                  }}
-                /> */}
                 </Row>
-                {/* <SearchInput offsetTop={detached ? 0 : 30} /> */}
               </Row>
             </Col>
             <Col
@@ -378,9 +306,7 @@ const Navbar = ({ isHome, hasNotify, routes }) => {
                 }
               }}
             >
-
             </Col>
-
           </Container>
         </StyledNavContainer>
       </StyledNavMainContainer>
