@@ -94,7 +94,7 @@ export default function Cards() {
                         d: key === active ? 'block' : 'none',
                         '@xsMax': {
                           br: 0,
-                          minHeight: '100vh',
+                          minHeight: '40vh',
                         },
                       }}
                       onClick={() => {
