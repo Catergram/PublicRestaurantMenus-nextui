@@ -11,7 +11,7 @@ const Progress = styled("span", {
   display: "block",
   height: "3px",
   background: "rgb(0 0 0 / 65%)",
-  margin: "$4 !important",
+  margin: "$2 !important",
   borderRadius: "3px",
   overflow: "hidden",
   zIndex: 999,
