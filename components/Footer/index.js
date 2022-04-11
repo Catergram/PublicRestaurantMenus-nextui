@@ -1,4 +1,4 @@
-import { useMediaQuery } from "@components/useMediaQuery";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 import { Button, Card, Col, Container, Grid, Image, Row, Spacer, Text } from "@nextui-org/react";
 import FooterCardRight from "./FooterCardRight";
 

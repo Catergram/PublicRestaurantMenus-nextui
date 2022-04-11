@@ -1,11 +1,13 @@
+import { useEffect, useState } from 'react'
 import { Card, Grid, Container, Row, Col } from "@nextui-org/react";
 import { useRouter } from "next/router";
 
 import CardContent from "./CardContent";
-import { useMediaQuery } from "./useMediaQuery";
+import { useMediaQuery } from "../hooks/useMediaQuery";
+import Progress from './Progress'
 
 const images = [
-  'https://unsplash.it/597/796?id=1',
+  'https://unsplash.it/230/344?id=1',
   'https://unsplash.it/230/344?id=2',
   'https://unsplash.it/230/344?id=3',
   'https://unsplash.it/230/344?id=4',
@@ -15,9 +17,35 @@ const images = [
   'https://unsplash.it/230/344?id=8',
 ]
 
+const images2 = [
+  'https://unsplash.it/230/344?id=1',
+  'https://unsplash.it/230/344?id=2',
+  'https://unsplash.it/230/344?id=3',
+  'https://unsplash.it/230/344?id=4',
+  'https://unsplash.it/230/344?id=5',
+]
+
 export default function Cards() {
   const router = useRouter()
   const isSm = useMediaQuery(650)
+  const [active, setActive] = useState(0)
+
+  const activeSlide = (index) => {
+    setActive(index)
+  }
+
+  const next = () => {
+    if (active < images2.length - 1) {
+      activeSlide(active + 1)
+    } else {
+      activeSlide(0)
+    }
+  }
+
+  useEffect(() => {
+    let timer = setInterval(next, 5000)
+    return () => clearInterval(timer)
+  }, [active])
 
   return (
     <>
@@ -45,16 +73,35 @@ export default function Cards() {
             images.map((image, index) => (
               <Grid xs={12} sm={4} xl={3} md={3} key={index}>
                 <Card cover>
-                  <Card.Image
-                    src={image}
-                    height={340}
-                    width="100%"
-                    className="cursor-pointer"
-                    alt="Card image background"
-                    onClick={() => {
-                      router.push('/story')
+                  <Card.Header
+                    css={{
+                      position: 'absolute',
                     }}
-                  />
+                  >
+                    {[...Array(images2.length).keys()].map((key) => (
+                      <Progress key={key} active={key === active} />
+                    ))}
+                  </Card.Header>
+                  {images2.map((image, key) => (
+                    <Card.Image
+                      src={image}
+                      height={340}
+                      width="100%"
+                      active={key === active}
+                      className="cursor-pointer"
+                      alt="Card image background"
+                      containerCss={{
+                        d: key === active ? 'block' : 'none',
+                        '@xsMax': {
+                          br: 0,
+                          minHeight: '100vh',
+                        },
+                      }}
+                      onClick={() => {
+                        router.push('/story')
+                      }}
+                    />
+                  ))}
                   <Card.Footer css={{ position: "absolute", zIndex: 1, bottom: 5 }}>
                     <Col>
                       <CardContent />
