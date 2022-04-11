@@ -1,22 +1,23 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { Card, Grid } from '@nextui-org/react'
+import { Card, Grid, Button } from '@nextui-org/react'
 
 import Progress from '@components/Progress'
 import CardContent from '@components/CardContent'
 import { useMediaQuery } from '../hooks/useMediaQuery'
 
 const images = [
-  'https://unsplash.it/597/796?id=1',
-  'https://unsplash.it/597/796?id=2',
-  'https://unsplash.it/597/796?id=3',
-  'https://unsplash.it/597/796?id=4',
-  'https://unsplash.it/597/796?id=5',
+  'https://unsplash.it/1920/1200?id=1',
+  'https://unsplash.it/1920/1200?id=2',
+  'https://unsplash.it/1920/1200?id=3',
+  'https://unsplash.it/1920/1200?id=4',
+  'https://unsplash.it/1920/1200?id=5',
 ]
 
 export default function Story() {
   const router = useRouter()
-  // const isMobile = useMediaQuery(650)
+  const isMobile = useMediaQuery(650)
+  const isDesktop = useMediaQuery(2000)
   const [active, setActive] = useState(0)
 
   const activeSlide = (index) => {
@@ -38,30 +39,44 @@ export default function Story() {
 
   return (
     <div>
-      {/* {!isMobile &&
-        <div className="flex justify-end cursor-pointer" onClick={() => {
-          router.push('/')
-        }}>
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-        </div>
-      } */}
+      {
+        <Button
+          auto
+          color="error"
+          icon={<svg className="w-6 h-6" fill="black" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>}
+          css={{
+            position: 'fixed',
+            right: '10px',
+            top: isMobile ? '35px' : '10px',
+            color: 'black',
+            zIndex: '999'
+          }}
+          onClick={() => {
+            router.push('/')
+          }}
+        />
+      }
       <Grid.Container
-        gap={2}
         css={{
           '@xsMax': {
             px: 0,
           },
           display: 'flex',
           justifyContent: 'center',
+          height: '100vh',
+          alignItems: 'center',
         }}
       >
         <Grid
           md={6}
           sm={12}
-          css={{
+          css={isMobile ? {} : {
             '@xsMax': {
               p: 0,
+              minHeight: '50vh',
             },
+            display: 'flex',
+            justifyContent: 'center'
           }}
         >
           <Card
@@ -69,7 +84,12 @@ export default function Story() {
             css={{
               '@xsMax': {
                 br: 0,
+                minHeight: '50vh',
               },
+              width: isDesktop && '50vh',
+              height: isMobile ? '100vh' : 800,
+              borderRadius: isMobile && 0,
+              border: 'none'
             }}
           >
             <Card.Header
@@ -85,8 +105,8 @@ export default function Story() {
             {images.map((image, key) => (
               <Card.Image
                 key={key}
-                width="100%"
-                height={600}
+                width={isDesktop ? '600' : '100%'}
+                height='100vh'
                 src={image}
                 active={key === active}
                 alt='Card image background'
@@ -94,7 +114,7 @@ export default function Story() {
                   d: key === active ? 'block' : 'none',
                   '@xsMax': {
                     br: 0,
-                    minHeight: '100vh',
+                    minHeight: '50vh',
                   },
                 }}
               />
@@ -118,6 +138,6 @@ export default function Story() {
           </Card>
         </Grid>
       </Grid.Container>
-    </div>
+    </div >
   )
 }

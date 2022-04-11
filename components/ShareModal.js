@@ -8,12 +8,14 @@ export default function ShareModal({ isOpen, handleClose }) {
         blur
         open={isOpen}
         onClose={handleClose}
-        className="bg-transparent shadow-none"
+        css={{
+          backgroundColor: 'transparent',
+          boxShadow: 'none'
+        }}
       >
         <Modal.Header>
           <img
             src="./images/app-store.png"
-            className="mb-4 footer-images"
             alt=""
           />
         </Modal.Header>
@@ -21,7 +23,6 @@ export default function ShareModal({ isOpen, handleClose }) {
           <Row justify="space-between">
             <div>
               <img
-                className="footer-images"
                 src="./images/google-play.png"
                 alt=""
               />

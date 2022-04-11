@@ -15,7 +15,7 @@ export default function CardContent({ storyButton }) {
   return (
     <>
       <Row>
-        <Col className="card-text">
+        <Col>
           <Text b size={32} css={{ color: "$white" }}>
             Steak Dish
           </Text>
@@ -80,7 +80,7 @@ export default function CardContent({ storyButton }) {
           </Grid.Container>
         </Col>
         {!storyButton && (
-          <Col className="card-image">
+          <Col>
             <Row
               justify="center"
               align="flex-start"

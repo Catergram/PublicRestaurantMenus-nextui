@@ -300,6 +300,7 @@ export default function Layout({ children }) {
         body {
           font-family: sans-serif;
           background-color: #eaf1f6;
+          overflow: auto !important;
         }
       `}</style>
     </>
