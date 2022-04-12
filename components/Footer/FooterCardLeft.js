@@ -1,4 +1,5 @@
 import { Card, Col, Container, Grid, Row, Text } from "@nextui-org/react";
+import Image from "next/image";
 import FooterMenuContent from "./FooterMenuContent";
 
 export default function FooterCardLeft({ isSm }) {
@@ -32,13 +33,13 @@ export default function FooterCardLeft({ isSm }) {
                     Millions of local menus. Share food with friends and discover new favorites.
                   </Text>
                 </Grid>
-                <Grid sm={6} md={4} style={{ margin: '0' }}>
-                  <Card.Image
-                    src="images/food.png"
+                <Grid sm={6} md={4} >
+                  <Image
+                    src="/images/food(1).png"
+                    objectFit="fill"
                     alt="Default Image"
-                    css={{ width: "320px", height: "150px" }}
-                    width={300}
-                    height={100}
+                    width={isSm ? 200 : 300}
+                    height={isSm ? 100 : 150}
                   />
                 </Grid>
               </Grid.Container>
