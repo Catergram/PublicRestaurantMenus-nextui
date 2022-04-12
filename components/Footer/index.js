@@ -9,25 +9,19 @@ export default function Footer() {
 
   return (
     <>
-      <div style={{ background: "#F5F5F5" }}>
-        <Row>
-          <Col>
-            <Grid.Container gap={2} justify="center">
-              <Grid sm md lg={8} xs>
-                <FooterCardLeft isSm={isSm} />
-              </Grid>
-              <Grid sm md lg={4} xs>
-                <FooterCardRight />
-              </Grid>
-              {isSm &&
-                <Grid>
-                  <FooterMenuContent />
-                </Grid>
-              }
-            </Grid.Container >
-          </Col >
-        </Row >
-      </div>
+      <Grid.Container css={{ background: "#F5F5F5" }} justify="center">
+        <Grid sm md lg={8} xs >
+          <FooterCardLeft isSm={isSm} />
+        </Grid>
+        <Grid sm md lg={4} xs>
+          <FooterCardRight />
+        </Grid>
+        {isSm &&
+          <Grid>
+            <FooterMenuContent />
+          </Grid>
+        }
+      </Grid.Container >
     </>
   )
 }
