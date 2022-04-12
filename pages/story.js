@@ -48,17 +48,29 @@ export default function Story() {
       <Grid
         md={6}
         sm={12}
+        // xs
         css={{
-          "@xsMax": {
-            p: 0
-          }
+          "@xs": {
+            maxWidth: "100%"
+          },
+          "@sm": {
+            maxWidth: "100%"
+          },
+          "@mdMax": {
+            // maxWidth: "100%",
+            p: 0,
+          },
+          "@md": {
+            maxWidth: "45%"
+          },
         }}
       >
         <Card
           cover
+          autoResize
           css={{
             "@xsMax": {
-              br: 0
+              br: 0,
             }
           }}
         >
