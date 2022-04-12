@@ -10,7 +10,7 @@ export default function IndexPage() {
   return (
     <>
       <Header />
-      <Grid.Container justify="center">
+      <Grid.Container css={{ background: "#fcfcfc" }} justify="center">
         <Grid xs={1} />
         <Grid xs={10}>
           <Cards />

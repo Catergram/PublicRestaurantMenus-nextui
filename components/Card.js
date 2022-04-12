@@ -49,7 +49,7 @@ export default function Cards() {
 
   return (
     <>
-      <Container responsive css={{ marginTop: '4.5rem' }}>
+      <Container responsive css={{ marginTop: '4.5rem', marginBottom: '4.5rem' }}>
         <Row>
           <div>
             <Col span={isSm ? 12 : 5} >
