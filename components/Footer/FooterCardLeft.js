@@ -38,8 +38,8 @@ export default function FooterCardLeft({ isSm }) {
                     src="/images/food(1).png"
                     objectFit="fill"
                     alt="Default Image"
-                    width={isSm ? 200 : 300}
-                    height={isSm ? 100 : 150}
+                    width={isSm ? 150 : 300}
+                    height={isSm ? 80 : 150}
                   />
                 </Grid>
               </Grid.Container>
