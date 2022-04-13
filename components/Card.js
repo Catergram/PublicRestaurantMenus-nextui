@@ -95,11 +95,11 @@ export default function Cards() {
                       containerCss={{
                         d: key === active ? 'block' : 'none',
                         height: "100%",
-                        maxHeight: "90vh",
+                        maxHeight: "100vh",
                         '@xsMax': {
                           br: 0,
-                          minHeight: '100vh',
-                        }
+                          minHeight: '40vh',
+                        },
                       }}
                       onClick={() => {
                         router.push('/story')
