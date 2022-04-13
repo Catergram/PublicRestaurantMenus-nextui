@@ -83,20 +83,23 @@ export default function Cards() {
                   </Card.Header>
                   {images2.map((image, key) => (
                     <Card.Image
-                      src={image}
-                      // height={340}
-                      height="100%"
+                      key={key}
                       width="100%"
+                      height="100%"
+                      // height={340}
+                      src={image}
                       autoResize={false}
                       active={key === active}
                       className="cursor-pointer"
                       alt="Card image background"
                       containerCss={{
                         d: key === active ? 'block' : 'none',
+                        height: "100%",
+                        maxHeight: "90vh",
                         '@xsMax': {
                           br: 0,
-                          minHeight: '40vh',
-                        },
+                          minHeight: '100vh',
+                        }
                       }}
                       onClick={() => {
                         router.push('/story')
