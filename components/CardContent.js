@@ -92,7 +92,7 @@ export default function CardContent({ storyButton }) {
                 alt="Default Image"
                 width={24}
                 height={24}
-                className="cursor-pointer"
+                className="cursor-pointer rounded-none"
                 onClick={(e) => {
                   e.stopPropagation();
                   handleClose();
@@ -105,7 +105,7 @@ export default function CardContent({ storyButton }) {
                 alt="Default Image"
                 width={24}
                 height={24}
-                className="cursor-pointer"
+                className="cursor-pointer rounded-none"
                 onClick={(e) => {
                   e.stopPropagation();
                   handleClose();
