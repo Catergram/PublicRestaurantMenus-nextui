@@ -34,13 +34,20 @@ export default function FooterCardLeft({ isSm }) {
                   </Text>
                 </Grid>
                 <Grid sm={6} md={4} >
-                  <Image
-                    src="/images/food(1).png"
+                  <Card.Image
+                    src="images/food.png"
+                    alt="Default Image"
+                    width="100%"
+                    height="100%"
+                    css={{ width: "320px", height: "150px" }}
+                  />
+                  {/* <Image
+                    src="/images/food.png"
                     objectFit="fill"
                     alt="Default Image"
                     width={isSm ? 150 : 300}
                     height={isSm ? 80 : 150}
-                  />
+                  /> */}
                 </Grid>
               </Grid.Container>
             </Card.Body>
