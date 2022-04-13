@@ -49,7 +49,7 @@ export default function Cards() {
 
   return (
     <>
-      <Container responsive css={{ marginTop: '4.5rem', marginBottom: '4.5rem' }}>
+      <Container responsive css={{ marginTop: '4.5rem', marginBottom: '4rem' }}>
         <Row>
           <div>
             <Col span={isSm ? 12 : 5} >
@@ -84,8 +84,10 @@ export default function Cards() {
                   {images2.map((image, key) => (
                     <Card.Image
                       src={image}
-                      height={340}
+                      // height={340}
+                      height="100%"
                       width="100%"
+                      autoResize={false}
                       active={key === active}
                       className="cursor-pointer"
                       alt="Card image background"
