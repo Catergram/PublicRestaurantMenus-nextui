@@ -13,7 +13,7 @@ const images = [
   },
   {
     image: "https://dgh3t0irkf4qk.cloudfront.net/public/3ecbc810-0225-479e-9431-d80678da3c451648154823455",
-    text: "Madonna,Rihanna,Cher,Adele...",
+    text: "Madonna",
     align: "CENTER",
   },
   {
@@ -159,7 +159,9 @@ export default function Story() {
                   position: "absolute",
                   top: images[active].align === "TOP" ? "10%" : images[active].align === "BOTTOM" ? "80%" : "50%",
                   width: "100%",
-                  textAlign: "center"
+                  textAlign: "center",
+                  fontSize: "50px",
+                  color: "#fff"
                 }}
               >{images[active].text}</Text>
             </Card.Body>
