@@ -89,6 +89,12 @@ export default function Story() {
         gap={2}
         justify="center"
         css={{
+          background: `url(${images[active].image})`,
+          overflow: 'hidden',
+          width: '100%',
+          padding: '$0',
+          margin: '$0',
+          // opacity: '0.1',
           "@xsMax": {
             px: 0
           }
@@ -96,10 +102,14 @@ export default function Story() {
       >
         <Grid
           css={{
+            opacity: '1',
+            p: '0',
+            maxHeight: "fit-content",
             "@initial": {
               maxW: "460px",
             },
             "@xsMax": {
+              height: '100vh',
               maxW: "100%",
               p: 0
             }
@@ -110,12 +120,17 @@ export default function Story() {
             css={{
               position: 'relative',
               overflow: 'visible',
+              top: '10%',
+              height: '80%',
+              border: 'none',
               'initial': {
                 height: '80%',
-                top: '80px'
+                top: '80px',
               },
               '@xsMax': {
-                br: 0
+                br: 0,
+                height: '100%',
+                top: '0px',
               }
             }}
           >
@@ -137,17 +152,17 @@ export default function Story() {
                     width="100%"
                     height="100%"
                     src={image.image}
-                    autoResize={false}
+                    autoResize={true}
                     active={key === active}
                     alt="Card image background"
                     containerCss={{
                       d: key === active ? "block" : "none",
                       height: "100%",
-                      maxHeight: "90vh",
+                      maxHeight: "100vh",
                       aspectRatio: 1 / 2,
                       "@xsMax": {
                         br: 0,
-                        minHeight: "100vh"
+                        Height: "100vh"
                       }
                     }}
                   />
@@ -182,6 +197,8 @@ export default function Story() {
                 justifyContent: "center",
                 top: "50%",
                 left: isMobile ? '1rem' : '-5rem',
+                height: '48px',
+                width: '48px',
               }}
               onClick={prev}
             />
@@ -200,7 +217,9 @@ export default function Story() {
                 alignItems: 'center',
                 justifyContent: "center",
                 top: '50%',
-                right: isMobile ? '1rem' : '-5rem'
+                right: isMobile ? '1rem' : '-5rem',
+                height: '48px',
+                width: '48px',
               }}
               onClick={next}
             />
