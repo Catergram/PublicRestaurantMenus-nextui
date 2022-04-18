@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Card, Grid, Button, Image, Text } from "@nextui-org/react";
+import { Card, Grid, Button, Image, Text, Col } from "@nextui-org/react";
 import { useRouter } from 'next/router'
 import Progress from "../components/Progress";
 import CardContent from "../components/CardContent";
@@ -66,6 +66,24 @@ export default function Story() {
 
   return (
     <>
+      <Col
+        css={{
+          backgroundImage: `url(${images[active].image})`,
+          backgroundSize: '3000%',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'bottom',
+          position: 'fixed',
+          height: '100vh',
+          width: '100%',
+        }}
+      >
+        <Col
+          css={{
+            backdropFilter: `blur(20px)`,
+            height: '100vh',
+          }}
+        />
+      </Col>
       <Button
         auto
         color="error"
@@ -89,12 +107,10 @@ export default function Story() {
         gap={2}
         justify="center"
         css={{
-          background: `url(${images[active].image})`,
           overflow: 'hidden',
           width: '100%',
           padding: '$0',
           margin: '$0',
-          // opacity: '0.1',
           "@xsMax": {
             px: 0
           }
