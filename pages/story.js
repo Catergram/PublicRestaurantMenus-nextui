@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
-import { Card, Grid, Button, Image, Text, Col } from "@nextui-org/react";
 import { useRouter } from 'next/router'
-import Progress from "../components/Progress";
-import CardContent from "../components/CardContent";
+import { useEffect, useState } from "react"
+import { Card, Grid, Button, Image, Text, Col } from "@nextui-org/react"
+
+import Progress from "../components/Progress"
+import CardContent from "../components/CardContent"
 import { useMediaQuery } from '../hooks/useMediaQuery'
 
 const images = [
@@ -162,27 +163,25 @@ export default function Story() {
             </Card.Header>
             <Card.Body>
               {images.map((image, key) => (
-                <>
-                  <Card.Image
-                    key={key}
-                    width="100%"
-                    height="100%"
-                    src={image.image}
-                    autoResize={true}
-                    active={key === active}
-                    alt="Card image background"
-                    containerCss={{
-                      d: key === active ? "block" : "none",
-                      height: "100%",
-                      maxHeight: "100vh",
-                      aspectRatio: 1 / 2,
-                      "@xsMax": {
-                        br: 0,
-                        Height: "100vh"
-                      }
-                    }}
-                  />
-                </>
+                <Card.Image
+                  key={key}
+                  width="100%"
+                  height="100%"
+                  src={image.image}
+                  autoResize={true}
+                  active={`${key === active}`}
+                  alt="Card image background"
+                  containerCss={{
+                    d: key === active ? "block" : "none",
+                    height: "100%",
+                    maxHeight: "100vh",
+                    aspectRatio: 1 / 2,
+                    "@xsMax": {
+                      br: 0,
+                      Height: "100vh"
+                    }
+                  }}
+                />
               ))}
 
               <Text
@@ -199,7 +198,7 @@ export default function Story() {
             <Button
               auto
               icon={
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="m21.52 16.22 7.75 7.75m-7.75 7.78L29.27 24" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"><path stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" d="m21.52 16.22 7.75 7.75m-7.75 7.78L29.27 24" /></svg>
               }
               css={{
                 padding: "0!important",
@@ -221,7 +220,7 @@ export default function Story() {
             <Button
               auto
               icon={
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="m21.52 16.22 7.75 7.75m-7.75 7.78L29.27 24" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"><path stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" d="m21.52 16.22 7.75 7.75m-7.75 7.78L29.27 24" /></svg>
               }
               css={{
                 padding: "0!important",

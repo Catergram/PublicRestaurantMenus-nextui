@@ -89,7 +89,7 @@ export default function Cards() {
                       // height={340}
                       src={image}
                       autoResize={false}
-                      active={key === active}
+                      active={`${key === active}`}
                       className="cursor-pointer"
                       alt="Card image background"
                       containerCss={{
