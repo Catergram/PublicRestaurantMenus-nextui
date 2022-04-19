@@ -248,11 +248,12 @@ export default function Story() {
                 background:
                   'linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(255, 255, 255, 0) 100%)',
                 '@xsMax': {
+                  borderRadius: '0px',
                   p: '$lg $12'
                 }
               }}
             >
-              <CardContent storyButton />
+              {/* <CardContent storyButton /> */}
             </Card.Footer>
           </Card>
         </Grid>
