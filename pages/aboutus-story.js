@@ -1,10 +1,10 @@
-import { useRouter } from "next/router"
+import { useRouter } from 'next/router'
 import { useEffect, useState } from "react"
 import { Card, Grid, Button, Image, Text, Col } from "@nextui-org/react"
 
 import Progress from "../components/Progress"
 import CardContent from "../components/CardContent"
-import { useMediaQuery } from "../hooks/useMediaQuery"
+import { useMediaQuery } from '../hooks/useMediaQuery'
 
 const images = [
   {
@@ -70,24 +70,18 @@ export default function Story() {
       <Col
         css={{
           backgroundImage: `url(${images[active].image})`,
-          backgroundSize: "3000%",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "bottom",
-          position: "fixed",
-          height: "100vh",
-          width: "100%",
-          "@xsMax": {
-            height: "60vh"
-          }
+          backgroundSize: '3000%',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'bottom',
+          position: 'fixed',
+          height: '100vh',
+          width: '100%',
         }}
       >
         <Col
           css={{
             backdropFilter: `blur(20px)`,
-            height: "100vh",
-            "@xsMax": {
-              height: "60vh"
-            }
+            height: '100vh',
           }}
         />
       </Col>
@@ -101,24 +95,23 @@ export default function Story() {
           height={30}
         />}
         css={{
-          position: "fixed",
-          left: "10px",
-          top: isMobile ? "35px" : "10px",
-          zIndex: "999",
+          position: 'fixed',
+          left: '10px',
+          top: isMobile ? '35px' : '10px',
+          zIndex: '999',
         }}
         onClick={() => {
-          router.push("/")
+          router.push('/')
         }}
       />
       <Grid.Container
         gap={2}
         justify="center"
         css={{
-          overflow: "hidden",
-          width: "100%",
-          height: "100vh",
-          padding: "$0",
-          margin: "$0",
+          overflow: 'hidden',
+          width: '100%',
+          padding: '$0',
+          margin: '$0',
           "@xsMax": {
             px: 0
           }
@@ -126,14 +119,14 @@ export default function Story() {
       >
         <Grid
           css={{
-            opacity: "1",
-            p: "0",
+            opacity: '1',
+            p: '0',
             maxHeight: "fit-content",
             "@initial": {
               maxW: "460px",
             },
             "@xsMax": {
-              height: "100vh",
+              height: '100vh',
               maxW: "100%",
               p: 0
             }
@@ -142,19 +135,19 @@ export default function Story() {
           <Card
             cover
             css={{
-              position: "relative",
-              overflow: "visible",
-              top: "10%",
-              height: "75%",
-              border: "none",
-              "initial": {
-                height: "80%",
-                top: "80px",
+              position: 'relative',
+              overflow: 'visible',
+              top: '10%',
+              height: '80%',
+              border: 'none',
+              'initial': {
+                height: '80%',
+                top: '80px',
               },
-              "@xsMax": {
+              '@xsMax': {
                 br: 0,
-                height: "100%",
-                top: "0px",
+                height: '100%',
+                top: '0px',
               }
             }}
           >
@@ -181,20 +174,11 @@ export default function Story() {
                   containerCss={{
                     d: key === active ? "block" : "none",
                     height: "100%",
-                    width: "100%",
                     maxHeight: "100vh",
                     aspectRatio: 1 / 2,
                     "@xsMax": {
                       br: 0,
-                      height: "60vh",
-                      width: "100vh"
-                    }
-                  }}
-                  css={{
-                    height: "70%!important",
-                    "@xsMax": {
-                      height: "60vh!important",
-                      width: "100vh"
+                      Height: "100vh"
                     }
                   }}
                 />
@@ -203,7 +187,7 @@ export default function Story() {
               <Text
                 css={{
                   position: "absolute",
-                  top: images[active].align === "TOP" ? "10%" : images[active].align === "BOTTOM" ? "50%" : "30%",
+                  top: images[active].align === "TOP" ? "10%" : images[active].align === "BOTTOM" ? "80%" : "50%",
                   width: "100%",
                   textAlign: "center",
                   fontSize: "50px",
@@ -223,16 +207,13 @@ export default function Story() {
                 backgroundColor: "#fff!important",
                 borderRadius: "50%!important",
                 transform: "rotate(180deg)!important",
-                position: "absolute",
-                alignItems: "center",
+                position: 'absolute',
+                alignItems: 'center',
                 justifyContent: "center",
                 top: "50%",
-                left: isMobile ? "1rem" : "-5rem",
-                height: "48px",
-                width: "48px",
-                "@xsMax": {
-                  top: "30%",
-                }
+                left: isMobile ? '1rem' : '-5rem',
+                height: '48px',
+                width: '48px',
               }}
               onClick={prev}
             />
@@ -247,80 +228,33 @@ export default function Story() {
                 filter: "none!important",
                 backgroundColor: "#fff!important",
                 borderRadius: "50%!important",
-                position: "absolute",
-                alignItems: "center",
+                position: 'absolute',
+                alignItems: 'center',
                 justifyContent: "center",
-                top: "50%",
-                right: isMobile ? "1rem" : "-5rem",
-                height: "48px",
-                width: "48px",
-                "@xsMax": {
-                  top: "30%",
-                }
+                top: '50%',
+                right: isMobile ? '1rem' : '-5rem',
+                height: '48px',
+                width: '48px',
               }}
               onClick={next}
             />
             <Card.Footer
               css={{
                 zIndex: 1,
-                position: "absolute",
-                p: "$md $lg",
+                position: 'absolute',
+                p: '$md $lg',
                 bottom: 0,
                 left: 0,
-                background: "#fff",
-                marginBottom: "135px",
-                "@xsMax": {
-                  borderRadius: "0px",
-                  p: "$lg $12",
-                  marginBottom: "160px",
-                  background: "#fff",
+                background:
+                  'linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(255, 255, 255, 0) 100%)',
+                '@xsMax': {
+                  borderRadius: '0px',
+                  p: '$lg $12'
                 }
               }}
             >
-              <CardContent storyButton textColorBlack />
+              <CardContent storyButton />
             </Card.Footer>
-            <Col css={{
-              display: 'flex',
-              justifyContent: 'space-evenly',
-              marginBottom: '40px'
-            }}>
-              <Button
-                auto
-                type="button"
-                css={{
-                  color: '#fff !important',
-                  backgroundColor: "#020202 !important",
-                  width: '40%',
-                  height: "50px",
-                  fontSize: "24px",
-                  "@xsMax": {
-                    color: '#fff !important',
-                    backgroundColor: "#020202 !important",
-                    width: '40%'
-                  }
-                }}
-              >
-                Uber Eats
-              </Button>
-              <Button
-                auto
-                type="button"
-                css={{
-                  color: '#fff !important',
-                  backgroundColor: "#e14747 !important",
-                  width: '40%',
-                  height: "50px",
-                  fontSize: "24px",
-                  "@xsMax": {
-                    color: '#fff !important',
-                    backgroundColor: "#e14747 !important",
-                    width: '40%'
-                  }
-                }}
-              >
-                Grubhub
-              </Button>
-            </Col>
           </Card>
         </Grid>
       </Grid.Container>
