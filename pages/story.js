@@ -289,6 +289,13 @@ export default function Story() {
               marginBottom: '40px',
               "@xsMax": {
                 padding: '20px'
+              },
+              "@sm": {
+                padding: '20px',
+              },
+              "@mdMax": {
+                padding: '20px',
+                marginBottom: '$5',
               }
             }}>
               <Button
@@ -305,8 +312,13 @@ export default function Story() {
                     backgroundColor: "#020202 !important",
                     width: '100%',
                     marginBottom: '10px',
+                    fontSize: "13px",
+                    padding: '20px'
+                  },
+                  "@md": {
                     fontSize: "20px",
-                  }
+                  },
+
                 }}
               >
                 <Image
@@ -328,12 +340,16 @@ export default function Story() {
                   width: '40%',
                   height: "50px",
                   fontSize: "24px",
+                  marginLeft: "10px",
                   "@xsMax": {
                     color: '#fff !important',
                     backgroundColor: "#f63440 !important",
                     width: '100%',
+                    fontSize: "13px",
+                  },
+                  "@md": {
+                    marginLeft: '$5',
                     fontSize: "20px",
-                    marginLeft: "10px",
                   }
                 }}
               >
