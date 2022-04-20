@@ -60,7 +60,7 @@ export default function Header() {
                     <ChevronDownIcon
                       className={classNames(
                         open ? 'text-black-600' : 'text-black-400',
-                        'ml-2 h-5 w-5 m-0'
+                        'ml-2 h-5 w-5 ml-0'
                       )}
                       aria-hidden="true"
                     />
