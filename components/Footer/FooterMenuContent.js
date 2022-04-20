@@ -9,7 +9,7 @@ export default function FooterMenuContent() {
         color="#0E0E0E"
         style={{ textAlign: "left" }}
       >
-        Menu content and page provided by FoodDiscovery ® App. All rights reserved.
+        Menu content and page provided by FoodDiscovery ® App.<span style={{ marginLeft: "10px" }}>All rights reserved.</span>
       </Text>
     </Card.Body>
   )

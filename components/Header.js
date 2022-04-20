@@ -40,7 +40,7 @@ export default function Header() {
             <a href="#">
               <span className="sr-only">FULL MENU</span>
               <Image
-                className="h-8 w-auto sm:h-14 "
+                className="h-8 w-auto sm:h-14 m-0"
                 width={100}
                 height={172}
                 src="images/macd.png" />
@@ -60,7 +60,7 @@ export default function Header() {
                     <ChevronDownIcon
                       className={classNames(
                         open ? 'text-black-600' : 'text-black-400',
-                        'ml-2 h-5 w-5 '
+                        'ml-2 h-5 w-5 m-0'
                       )}
                       aria-hidden="true"
                     />

@@ -1,7 +1,8 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 export default function Layout({ children }) {
-
+  const router = useRouter()
   return (
     <>
       <Head>
@@ -287,6 +288,8 @@ export default function Layout({ children }) {
           crossOrigin=""
           href="/fonts/sf-pro-display/SF-Pro.ttf"
         />
+        <title>{router.asPath === '/' ? 'Mcdonlds' : router.asPath === '/story' ? 'Mcdonlds- Steak Dish' : 'Mcdonlds- About Us'}</title>
+        <link rel="icon" href="/images/m.ico" />
       </Head>
 
       {children}

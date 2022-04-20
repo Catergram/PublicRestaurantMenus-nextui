@@ -286,7 +286,12 @@ export default function Story() {
             <Col css={{
               display: 'flex',
               justifyContent: 'space-evenly',
-              marginBottom: '40px'
+              marginBottom: '40px',
+              "@xsMax": {
+                display: 'block',
+                marginBottom: '0px',
+                padding: '20px'
+              }
             }}>
               <Button
                 auto
@@ -300,7 +305,9 @@ export default function Story() {
                   "@xsMax": {
                     color: '#fff !important',
                     backgroundColor: "#020202 !important",
-                    width: '40%'
+                    width: '100%',
+                    marginBottom: '10px',
+                    fontSize: "20px",
                   }
                 }}
               >
@@ -318,7 +325,8 @@ export default function Story() {
                   "@xsMax": {
                     color: '#fff !important',
                     backgroundColor: "#e14747 !important",
-                    width: '40%'
+                    width: '100%',
+                    fontSize: "20px",
                   }
                 }}
               >
