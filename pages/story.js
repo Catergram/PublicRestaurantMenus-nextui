@@ -288,8 +288,6 @@ export default function Story() {
               justifyContent: 'space-evenly',
               marginBottom: '40px',
               "@xsMax": {
-                display: 'block',
-                marginBottom: '0px',
                 padding: '20px'
               }
             }}>
@@ -311,25 +309,41 @@ export default function Story() {
                   }
                 }}
               >
+                <Image
+                  src="images/uber-eats.jpg"
+                  objectFit="scale-down"
+                  alt="uber-eats"
+                  width={30}
+                  height={30}
+                />
                 Uber Eats
               </Button>
+
               <Button
                 auto
                 type="button"
                 css={{
                   color: '#fff !important',
-                  backgroundColor: "#e14747 !important",
+                  backgroundColor: "#f63440 !important",
                   width: '40%',
                   height: "50px",
                   fontSize: "24px",
                   "@xsMax": {
                     color: '#fff !important',
-                    backgroundColor: "#e14747 !important",
+                    backgroundColor: "#f63440 !important",
                     width: '100%',
                     fontSize: "20px",
+                    marginLeft: "10px",
                   }
                 }}
               >
+                <Image
+                  src="images/grubh.jpg"
+                  objectFit="scale-down"
+                  alt="grubh"
+                  width={30}
+                  height={30}
+                />
                 Grubhub
               </Button>
             </Col>
