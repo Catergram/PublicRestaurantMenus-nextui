@@ -12,26 +12,26 @@ const images = [
     text: "Who runs  the world?",
     align: "TOP",
   },
-  // {
-  //   image: "https://dgh3t0irkf4qk.cloudfront.net/public/3ecbc810-0225-479e-9431-d80678da3c451648154823455",
-  //   text: "Madonna",
-  //   align: "CENTER",
-  // },
-  // {
-  //   image: "https://unsplash.it/1920/1200?id=3",
-  //   text: "Hello",
-  //   align: "BOTTOM",
-  // },
-  // {
-  //   image: "https://unsplash.it/1920/1200?id=4",
-  //   text: "abc",
-  //   align: "TOP",
-  // },
-  // {
-  //   image: "https://unsplash.it/1920/1200?id=5",
-  //   text: "abc",
-  //   align: "TOP",
-  // },
+  {
+    image: "https://dgh3t0irkf4qk.cloudfront.net/public/3ecbc810-0225-479e-9431-d80678da3c451648154823455",
+    text: "Madonna",
+    align: "CENTER",
+  },
+  {
+    image: "https://unsplash.it/1920/1200?id=3",
+    text: "Hello",
+    align: "BOTTOM",
+  },
+  {
+    image: "https://unsplash.it/1920/1200?id=4",
+    text: "abc",
+    align: "TOP",
+  },
+  {
+    image: "https://unsplash.it/1920/1200?id=5",
+    text: "abc",
+    align: "TOP",
+  },
 ]
 
 export default function Story() {
