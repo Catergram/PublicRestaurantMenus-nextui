@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "storage": {
+      "FriendshipConnection:@model(appsync)": [
+        "read"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

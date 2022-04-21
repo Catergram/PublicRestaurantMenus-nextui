@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "serviceName": "AppSync",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authcatergram3e33e33c6"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "AWS_IAM"
+      }
+    ],
+    "conflictResolution": {},
+    "apiName": "catergram3",
+    "gqlSchemaPath": "/Users/shaque/Desktop/fooddiscovery/CatergramWeb/amplify/backend/api/catergram3/schema.graphql"
+  }
+}

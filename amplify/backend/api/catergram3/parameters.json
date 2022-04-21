@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "catergram3",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": "false",
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authcatergram3e33e33c6",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
