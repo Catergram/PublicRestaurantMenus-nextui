@@ -13,6 +13,6 @@
     ],
     "conflictResolution": {},
     "apiName": "catergram3",
-    "gqlSchemaPath": "/Users/shaque/Desktop/fooddiscovery/CatergramWeb/amplify/backend/api/catergram3/schema.graphql"
+    "gqlSchemaPath": "/Volumes/Untitled/project/fooddiscoveryApp/PublicRestaurantMenus-nextui/amplify/backend/api/catergram3/schema.graphql"
   }
 }
