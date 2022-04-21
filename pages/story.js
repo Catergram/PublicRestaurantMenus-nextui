@@ -145,11 +145,11 @@ export default function Story() {
               position: "relative",
               overflow: "visible",
               top: "10%",
-              height: "75%",
+              height: "70%",
               border: "none",
               "initial": {
-                height: "80%",
-                top: "80px",
+                height: "100%",
+                top: "100px",
               },
               "@xsMax": {
                 br: 0,
