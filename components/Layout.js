@@ -288,7 +288,7 @@ export default function Layout({ children }) {
           crossOrigin=""
           href="/fonts/sf-pro-display/SF-Pro.ttf"
         />
-        <title>{router.asPath === '/' ? 'Mcdonlds' : router.asPath === '/story' ? 'Mcdonlds- Steak Dish' : 'Mcdonlds- About Us'}</title>
+        <title>{router.asPath === '/' ? 'Mcdonlds' : router.asPath === '/story' ? 'Mcdonlds - Steak Dish' : 'Mcdonlds - About Us'}</title>
         <link rel="icon" href="/images/m.ico" />
       </Head>
 

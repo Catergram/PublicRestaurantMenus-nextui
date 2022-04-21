@@ -69,7 +69,7 @@ export default function Story() {
     <>
       <Col
         css={{
-          backgroundImage: `url(${images.length > 1 ? images[active].image : images[0].image})`,
+          backgroundImage: `url(${images[active].image})`,
           backgroundSize: "3000%",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "bottom",
@@ -164,7 +164,7 @@ export default function Story() {
                 position: "absolute"
               }}
             >
-              {images.length > 1 && [...Array(images.length).keys()].map((key) => (
+              {[...Array(images.length).keys()].map((key) => (
                 <Progress key={key} active={key === active} />
               ))}
             </Card.Header>
@@ -211,59 +211,55 @@ export default function Story() {
                 }}
               >{images[active].text}</Text>
             </Card.Body>
-            {images.length > 1 &&
-              <>
-                <Button
-                  auto
-                  icon={
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"><path stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" d="m21.52 16.22 7.75 7.75m-7.75 7.78L29.27 24" /></svg>
-                  }
-                  css={{
-                    padding: "0!important",
-                    backgroundRepeat: "no-repeat !important",
-                    filter: "none!important",
-                    backgroundColor: "#fff!important",
-                    borderRadius: "50%!important",
-                    transform: "rotate(180deg)!important",
-                    position: "absolute",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    top: "50%",
-                    left: isMobile ? "1rem" : "-5rem",
-                    height: "48px",
-                    width: "48px",
-                    "@xsMax": {
-                      top: "30%",
-                    }
-                  }}
-                  onClick={prev}
-                />
-                <Button
-                  auto
-                  icon={
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"><path stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" d="m21.52 16.22 7.75 7.75m-7.75 7.78L29.27 24" /></svg>
-                  }
-                  css={{
-                    padding: "0!important",
-                    backgroundRepeat: "no-repeat !important",
-                    filter: "none!important",
-                    backgroundColor: "#fff!important",
-                    borderRadius: "50%!important",
-                    position: "absolute",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    top: "50%",
-                    right: isMobile ? "1rem" : "-5rem",
-                    height: "48px",
-                    width: "48px",
-                    "@xsMax": {
-                      top: "30%",
-                    }
-                  }}
-                  onClick={next}
-                />
-              </>
-            }
+            <Button
+              auto
+              icon={
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"><path stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" d="m21.52 16.22 7.75 7.75m-7.75 7.78L29.27 24" /></svg>
+              }
+              css={{
+                padding: "0!important",
+                backgroundRepeat: "no-repeat !important",
+                filter: "none!important",
+                backgroundColor: "#fff!important",
+                borderRadius: "50%!important",
+                transform: "rotate(180deg)!important",
+                position: "absolute",
+                alignItems: "center",
+                justifyContent: "center",
+                top: "50%",
+                left: isMobile ? "1rem" : "-5rem",
+                height: "48px",
+                width: "48px",
+                "@xsMax": {
+                  top: "30%",
+                }
+              }}
+              onClick={prev}
+            />
+            <Button
+              auto
+              icon={
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"><path stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" d="m21.52 16.22 7.75 7.75m-7.75 7.78L29.27 24" /></svg>
+              }
+              css={{
+                padding: "0!important",
+                backgroundRepeat: "no-repeat !important",
+                filter: "none!important",
+                backgroundColor: "#fff!important",
+                borderRadius: "50%!important",
+                position: "absolute",
+                alignItems: "center",
+                justifyContent: "center",
+                top: "50%",
+                right: isMobile ? "1rem" : "-5rem",
+                height: "48px",
+                width: "48px",
+                "@xsMax": {
+                  top: "30%",
+                }
+              }}
+              onClick={next}
+            />
             <Card.Footer
               css={{
                 zIndex: 1,
@@ -286,17 +282,7 @@ export default function Story() {
             <Col css={{
               display: 'flex',
               justifyContent: 'space-evenly',
-              marginBottom: '40px',
-              "@xsMax": {
-                padding: '20px'
-              },
-              "@sm": {
-                padding: '20px',
-              },
-              "@mdMax": {
-                padding: '20px',
-                marginBottom: '$5',
-              }
+              marginBottom: '40px'
             }}>
               <Button
                 auto
@@ -310,56 +296,28 @@ export default function Story() {
                   "@xsMax": {
                     color: '#fff !important',
                     backgroundColor: "#020202 !important",
-                    width: '100%',
-                    marginBottom: '10px',
-                    fontSize: "13px",
-                    padding: '20px'
-                  },
-                  "@md": {
-                    fontSize: "20px",
-                  },
-
+                    width: '40%'
+                  }
                 }}
               >
-                <Image
-                  src="images/ubereats.png"
-                  objectFit="scale-down"
-                  alt="uber-eats"
-                  width={30}
-                  height={30}
-                />
                 Uber Eats
               </Button>
-
               <Button
                 auto
                 type="button"
                 css={{
                   color: '#fff !important',
-                  backgroundColor: "#f63440 !important",
+                  backgroundColor: "#e14747 !important",
                   width: '40%',
                   height: "50px",
                   fontSize: "24px",
-                  marginLeft: "10px",
                   "@xsMax": {
                     color: '#fff !important',
-                    backgroundColor: "#f63440 !important",
-                    width: '100%',
-                    fontSize: "13px",
-                  },
-                  "@md": {
-                    marginLeft: '$5',
-                    fontSize: "20px",
+                    backgroundColor: "#e14747 !important",
+                    width: '40%'
                   }
                 }}
               >
-                <Image
-                  src="images/Grubhub.png"
-                  objectFit="scale-down"
-                  alt="grubh"
-                  width={30}
-                  height={30}
-                />
                 Grubhub
               </Button>
             </Col>
