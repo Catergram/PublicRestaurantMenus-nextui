@@ -9,6 +9,7 @@
     "@headlessui/react": "^1.5.0",
     "@heroicons/react": "^1.0.6",
     "@nextui-org/react": "^1.0.6-beta.5",
+    "aws-amplify": "^4.3.20",
     "next": "latest",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"

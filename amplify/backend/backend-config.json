@@ -40,7 +40,16 @@
             }
           }
         }
-      }
+      },
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "catergram3e33e33c6",
+          "attributes": [
+            "UserPoolId"
+          ]
+        }
+      ]
     }
   },
   "hosting": {
