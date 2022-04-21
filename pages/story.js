@@ -322,7 +322,7 @@ export default function Story() {
                 }}
               >
                 <Image
-                  src="images/uber-eats.jpg"
+                  src="images/ubereats.png"
                   objectFit="scale-down"
                   alt="uber-eats"
                   width={30}
@@ -354,7 +354,7 @@ export default function Story() {
                 }}
               >
                 <Image
-                  src="images/grubh.jpg"
+                  src="images/Grubhub.png"
                   objectFit="scale-down"
                   alt="grubh"
                   width={30}
