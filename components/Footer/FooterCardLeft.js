@@ -35,7 +35,7 @@ export default function FooterCardLeft({ isSm }) {
                 </Grid>
                 <Grid sm={6} md={4} >
                   <Card.Image
-                    src="images/food.png"
+                    src="/images/food.png"
                     alt="Default Image"
                     width="100%"
                     height="100%"

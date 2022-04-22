@@ -15,6 +15,7 @@ export type AmplifyDependentResourcesAttributes = {
     },
     "api": {
         "catergram3": {
+            "GraphQLAPIKeyOutput": "string",
             "GraphQLAPIIdOutput": "string",
             "GraphQLAPIEndpointOutput": "string"
         }

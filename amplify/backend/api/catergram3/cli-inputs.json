@@ -8,11 +8,17 @@
     },
     "additionalAuthTypes": [
       {
+        "mode": "API_KEY",
+        "expirationTime": 365,
+        "apiKeyExpirationDate": "2023-04-22T03:00:51.369Z",
+        "keyDescription": "For Public Queries"
+      },
+      {
         "mode": "AWS_IAM"
       }
     ],
     "conflictResolution": {},
     "apiName": "catergram3",
-    "gqlSchemaPath": "/Volumes/Untitled/project/fooddiscoveryApp/PublicRestaurantMenus-nextui/amplify/backend/api/catergram3/schema.graphql"
+    "gqlSchemaPath": "/Users/compute1/Documents/Synced Proj CW/CatergramWeb/amplify/backend/api/catergram3/schema.graphql"
   }
 }

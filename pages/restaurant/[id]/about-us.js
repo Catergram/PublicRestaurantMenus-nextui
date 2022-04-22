@@ -2,8 +2,8 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from "react"
 import { Card, Grid, Button, Image, Text, Col } from "@nextui-org/react"
 
-import Progress from "../components/Progress"
-import CardContent from "../components/CardContent"
+import Progress from "@components/Progress"
+import CardContent from "@components/CardContent"
 import { useMediaQuery } from '@hooks/useMediaQuery'
 
 const images = [
@@ -36,6 +36,7 @@ const images = [
 
 export default function Story() {
   const router = useRouter()
+  const { id } = router.query
   const [active, setActive] = useState(0);
   const isMobile = useMediaQuery(650)
   const isTablet = useMediaQuery(878)
@@ -104,7 +105,7 @@ export default function Story() {
           zIndex: '999',
         }}
         onClick={() => {
-          router.push('/')
+          router.push(`/restaurant/${id}`)
         }}
       />
       <Grid.Container

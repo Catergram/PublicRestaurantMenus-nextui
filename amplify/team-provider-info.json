@@ -19,27 +19,27 @@
       "function": {
         "friendReqFn": {
           "deploymentBucketName": "amplify-betaone-main-154134-deployment",
-          "s3Key": "amplify-builds/friendReqFn-4e4d4f74427541583136-build.zip"
+          "s3Key": "amplify-builds/friendReqFn-6e5a516f587344497058-build.zip"
         },
         "shareLink": {
           "deploymentBucketName": "amplify-betaone-main-154134-deployment",
-          "s3Key": "amplify-builds/shareLink-576a694e4c6476764d2f-build.zip"
+          "s3Key": "amplify-builds/shareLink-6d564d76573044664834-build.zip"
         },
         "updateCardFn": {
           "deploymentBucketName": "amplify-betaone-main-154134-deployment",
-          "s3Key": "amplify-builds/updateCardFn-64526e6b69304f544456-build.zip"
+          "s3Key": "amplify-builds/updateCardFn-66646555663579786275-build.zip"
         },
         "shareCardWithMultipleUsersFn": {
           "deploymentBucketName": "amplify-betaone-main-154134-deployment",
-          "s3Key": "amplify-builds/shareCardWithMultipleUsersFn-55307a543738586c7832-build.zip"
+          "s3Key": "amplify-builds/shareCardWithMultipleUsersFn-31685250626e786d6e44-build.zip"
         },
         "redeemRewardFn": {
           "deploymentBucketName": "amplify-betaone-main-154134-deployment",
-          "s3Key": "amplify-builds/redeemRewardFn-42525050677a43714f53-build.zip"
+          "s3Key": "amplify-builds/redeemRewardFn-51446d594b5741353638-build.zip"
         },
         "testAutomation": {
           "deploymentBucketName": "amplify-betaone-main-154134-deployment",
-          "s3Key": "amplify-builds/testAutomation-70534e30504430593849-build.zip"
+          "s3Key": "amplify-builds/testAutomation-7662414a4d553554416b-build.zip"
         },
         "sendFriendRequest": {
           "deploymentBucketName": "amplify-betaone-main-154134-deployment",
@@ -55,7 +55,7 @@
         },
         "nearbyUserResolverFn": {
           "deploymentBucketName": "amplify-betaone-main-154134-deployment",
-          "s3Key": "amplify-builds/nearbyUserResolverFn-39514977616a6154314a-build.zip"
+          "s3Key": "amplify-builds/nearbyUserResolverFn-2f4e5637677069786170-build.zip"
         },
         "cardAverageRating": {
           "deploymentBucketName": "amplify-betaone-main-154134-deployment",
@@ -63,15 +63,15 @@
         },
         "searchCardResolver": {
           "deploymentBucketName": "amplify-betaone-main-154134-deployment",
-          "s3Key": "amplify-builds/searchCardResolver-506d3878336e675a4b37-build.zip"
+          "s3Key": "amplify-builds/searchCardResolver-42532f645a43514b4c4a-build.zip"
         },
         "searchRestaurantsResolver": {
           "deploymentBucketName": "amplify-betaone-main-154134-deployment",
-          "s3Key": "amplify-builds/searchRestaurantsResolver-413133343242432b4f47-build.zip"
+          "s3Key": "amplify-builds/searchRestaurantsResolver-70716d594c334172516c-build.zip"
         },
         "findUsersFn": {
           "deploymentBucketName": "amplify-betaone-main-154134-deployment",
-          "s3Key": "amplify-builds/findUsersFn-78552f46522f51733736-build.zip"
+          "s3Key": "amplify-builds/findUsersFn-79646a542b6446492f69-build.zip"
         },
         "sendPopularCardInArea": {
           "deploymentBucketName": "amplify-betaone-main-154134-deployment",
@@ -79,11 +79,11 @@
         },
         "postAuthHookFn": {
           "deploymentBucketName": "amplify-betaone-main-154134-deployment",
-          "s3Key": "amplify-builds/postAuthHookFn-486a476e597649464f56-build.zip"
+          "s3Key": "amplify-builds/postAuthHookFn-304750664a306c6a7948-build.zip"
         },
         "sendCardToUsersNearby": {
           "deploymentBucketName": "amplify-betaone-main-154134-deployment",
-          "s3Key": "amplify-builds/sendCardToUsersNearby-6d486a30476175715830-build.zip"
+          "s3Key": "amplify-builds/sendCardToUsersNearby-44466147594933767339-build.zip"
         },
         "sendCurrentCardToUsers": {
           "deploymentBucketName": "amplify-betaone-main-154134-deployment",
@@ -91,7 +91,7 @@
         },
         "sendEmail": {
           "deploymentBucketName": "amplify-betaone-main-154134-deployment",
-          "s3Key": "amplify-builds/sendEmail-62474e766a6247635357-build.zip"
+          "s3Key": "amplify-builds/sendEmail-314170566a5864496457-build.zip"
         },
         "shareMenuWithUsers": {
           "deploymentBucketName": "amplify-betaone-main-154134-deployment",
@@ -119,7 +119,7 @@
         },
         "sendPushNotificationToUsers": {
           "deploymentBucketName": "amplify-betaone-main-154134-deployment",
-          "s3Key": "amplify-builds/sendPushNotificationToUsers-72765745487843524941-build.zip"
+          "s3Key": "amplify-builds/sendPushNotificationToUsers-67523650443875414b4c-build.zip"
         },
         "nearByrestaurantFn": {
           "deploymentBucketName": "amplify-betaone-main-154134-deployment",

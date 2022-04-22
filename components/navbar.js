@@ -93,7 +93,7 @@ const Navbar = ({ isHome, hasNotify, routes }) => {
                     <Image
                       width={100}
                       height={172}
-                      src="images/macd.png" />
+                      src="/images/macd.png" />
                   </Link>
                 </NextLink>
                 <Spacer x={0.4} />

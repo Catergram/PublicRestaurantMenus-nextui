@@ -2,9 +2,9 @@ import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import { Card, Grid, Button, Image, Text, Col } from "@nextui-org/react"
 
-import Progress from "../components/Progress"
-import CardContent from "../components/CardContent"
-import { useMediaQuery } from "../hooks/useMediaQuery"
+import Progress from "@components/Progress"
+import CardContent from "@components/CardContent"
+import { useMediaQuery } from "@hooks/useMediaQuery"
 
 const images = [
   {
@@ -95,7 +95,7 @@ export default function Story() {
         auto
         color="error"
         icon={<Image
-          src="images/close_circled_icon.svg"
+          src="/images/close_circled_icon.svg"
           alt="Default Image"
           width={30}
           height={30}

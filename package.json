@@ -11,8 +11,14 @@
     "@nextui-org/react": "^1.0.6-beta.5",
     "aws-amplify": "^4.3.20",
     "next": "latest",
+    "next-redux-wrapper": "^7.0.5",
+    "next-seo": "^5.4.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-redux": "^8.0.1",
+    "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.4",

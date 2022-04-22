@@ -17,14 +17,14 @@ export default function FooterCardRight() {
         <Spacer y={1} />
         <Col>
           <Card.Image
-            src="images/app-store.png"
+            src="/images/app-store.png"
             alt="Default Image"
             width={410}
             height={115}
           />
           <Spacer y={1} />
           <Card.Image
-            src="images/google-play.png"
+            src="/images/google-play.png"
             alt="Default Image"
             width={410}
             height={115}

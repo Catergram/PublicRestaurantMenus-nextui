@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Text, Col, Row, Image, Grid } from "@nextui-org/react";
 
-import ShareModal from "./ShareModal";
+import ShareModal from "./../ShareModal";
 import { useMediaQuery } from "@hooks/useMediaQuery";
 
-export default function CardContent({ storyButton, textColorBlack }) {
+export default function ItemFooter({ storyButton, textColorBlack, item }) {
   const [isOpen, setIsOpen] = useState(undefined);
   const isSm = useMediaQuery(650);
 
@@ -17,10 +17,10 @@ export default function CardContent({ storyButton, textColorBlack }) {
       <Row>
         <Col>
           <Text b size={32} css={{ color: !textColorBlack ? "$white" : "$black" }}>
-            Steak Dish
+            {item.name}
           </Text>
           <Text size={24} css={{ color: !textColorBlack ? "$white" : "$black" }}>
-            McDonalds
+            {item.restaurant.name}
           </Text>
           <Grid.Container gap={isSm ? 1.1 : 1.8} justify="center">
             <Row>
@@ -34,7 +34,7 @@ export default function CardContent({ storyButton, textColorBlack }) {
                   }
                 }}
               >
-                $15
+                ${item.price}
               </Text>
               {!storyButton && (
                 <>

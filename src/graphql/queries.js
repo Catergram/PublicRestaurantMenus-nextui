@@ -9,6 +9,11 @@ export const getRestaurant = /* GraphQL */ `
             menus {
                 name
             }
+            file {
+                bucket
+                key
+                region
+            }
             orderOptionUrls {
                 backgroundColor
                 fontColor
@@ -29,9 +34,37 @@ export const getRestaurant = /* GraphQL */ `
                     description
                     id
                     price
+                    cardPointFile {
+                        bucket
+                        key
+                        region
+                    }
                     restaurant {
                         name
                     }
+                    cuisine
+                    delivery
+                    diets
+                    menus {
+                        name
+                    }
+                    mood {
+                        name
+                        backgroundColor
+                        createdAt
+                        file {
+                            bucket
+                            key
+                            region
+                        }
+                    }
+                    ratingScore
+                    createdAt
+                    location {
+                        lat
+                        lon
+                    }
+                    name
                 }
             }
         }

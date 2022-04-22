@@ -7,6 +7,7 @@ import {
 } from '@heroicons/react/outline'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { Image } from '@nextui-org/react'
+import {useSelector} from "react-redux";
 
 const solutions = [
   {
@@ -32,6 +33,8 @@ function classNames(...classes) {
 }
 
 export default function Header() {
+  const restaurant = useSelector((state) => state.restaurant.data);
+  const { menus, file } = restaurant;
   return (
     <Popover className="bg-white fixed w-full top-0 nav-bar-header">
       <div className="max-w-full mx-auto px-4 sm:px-6" style={{ boxShadow: "rgb(2 1 1 / 10%) 0px 5px 20px -5px" }}>
@@ -43,7 +46,8 @@ export default function Header() {
                 className="h-8 w-auto sm:h-14 m-0"
                 width={100}
                 height={172}
-                src="images/macd.png" />
+                src={`https://dgh3t0irkf4qk.cloudfront.net/public/${file[0].key}`}
+              />
             </a>
           </div>
           <Popover.Group as="nav" className="md:flex space-x-10">
@@ -78,7 +82,7 @@ export default function Header() {
                     <Popover.Panel className="absolute z-10 -ml-4 mt-3 transform px-2 w-screen w-40 sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
                       <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                         <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-4">
-                          {solutions.map((item) => (
+                          {menus.map((item) => (
                             <a
                               key={item.name}
                               href={item.href}

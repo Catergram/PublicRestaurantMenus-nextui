@@ -6,6 +6,8 @@
       "@data/*": ["data/*"],
       "@components": ["components"],
       "@components/*": ["components/*"],
+      "@hooks": ["hooks"],
+      "@hooks/*": ["hooks/*"]
     }
   }
 }
