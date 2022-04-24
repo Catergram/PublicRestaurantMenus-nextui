@@ -1,11 +1,11 @@
-type UserInvite @model @searchable @auth(rules: [{allow: private}]) {
+type UserInvite @model @searchable @auth(rules: [{allow: public, operations: [read]}, {allow: private}]) {
   id: ID!
   phone: String
   email: String
   shareId: String
 }
 
-type Content @model @auth(rules: [{allow: owner, ownerField: "owner", provider: userPools, operations: [read, create, delete, update]}, {allow: private, provider: userPools, operations: [read, create, update]}, {allow: private, provider: iam, operations: [read, create, delete, update]}, {allow: groups, groups: ["Admin"], operations: [read, create, delete, update]}]) {
+type Content @model @auth(rules: [{allow: public, operations: [read]}, {allow: owner, ownerField: "owner", provider: userPools, operations: [read, create, delete, update]}, {allow: private, provider: userPools, operations: [read, create, update]}, {allow: private, provider: iam, operations: [read, create, delete, update]}, {allow: groups, groups: ["Admin"], operations: [read, create, delete, update]}]) {
   id: ID!
   privacy: String
   help: String
@@ -35,7 +35,7 @@ type RestaurantUnapproved @model @auth(rules: [{allow: private}]) {
   averagePrice: String
 }
 
-type Restaurant @model @searchable @auth(rules: [{allow: owner, ownerField: "owner", provider: userPools, operations: [read, create, delete, update]}, {allow: private, provider: userPools, operations: [read, create, update]}, {allow: private, provider: iam, operations: [read, create, delete, update]}, {allow: groups, groups: ["Admin"], operations: [read, create, delete, update]}]) {
+type Restaurant @model @searchable @auth(rules: [{allow: public, operations: [read]}, {allow: owner, ownerField: "owner", provider: userPools, operations: [read, create, delete, update]}, {allow: private, provider: userPools, operations: [read, create, update]}, {allow: private, provider: iam, operations: [read, create, delete, update]}, {allow: groups, groups: ["Admin"], operations: [read, create, delete, update]},]) {
   id: ID!
   name: String!
   address: String!
@@ -72,18 +72,18 @@ type Contacts {
   email: String
 }
 
-type RestaurantMenu @model @auth(rules: [{allow: owner, ownerField: "owner", provider: userPools}, {allow: private, provider: userPools, operations: [read, create, update, delete]}, {allow: private, provider: iam, operations: [read, create, delete, update]}]) {
+type RestaurantMenu @model @auth(rules: [{allow: public, operations: [read]},{allow: owner, ownerField: "owner", provider: userPools}, {allow: private, provider: userPools, operations: [read, create, update, delete]}, {allow: private, provider: iam, operations: [read, create, delete, update]}]) {
   id: ID!
   name: String
   description: String
   shares: [MenuShare] @hasMany
 }
-type Cuisine @model @auth(rules: [{allow: private}]) {
+type Cuisine @model @auth(rules: [{allow: public, operations: [read]}, {allow: private}]) {
   id: ID!
   name: String!
 }
 
-type Delivery @model @auth(rules: [{allow: private}]) {
+type Delivery @model @auth(rules: [{allow: public, operations: [read]}, {allow: private}]) {
   id: ID!
   name: String!
   file: S3Object
@@ -91,7 +91,7 @@ type Delivery @model @auth(rules: [{allow: private}]) {
   backgroundColor: String
 }
 
-type Mood @model @auth(rules: [{allow: private}]) {
+type Mood @model @auth(rules: [{allow: public, operations: [read]}, {allow: private}]) {
   id: ID!
   name: String!
   file: S3Object
@@ -99,7 +99,7 @@ type Mood @model @auth(rules: [{allow: private}]) {
   userMoods: [UserMood] @hasMany
 }
 
-type Diet @model @auth(rules: [{allow: private}]) {
+type Diet @model @auth(rules: [{allow: public, operations: [read]}, {allow: private}]) {
   id: ID!
   name: String!
 }
@@ -239,7 +239,7 @@ type UnapprovedItem @model @searchable @auth(rules: [{allow: private}]) {
   menus: [Menu]
 }
 
-type CardPoint @model @searchable @auth(rules: [{allow: owner, ownerField: "owner", provider: userPools, operations: [read, create, delete, update]}, {allow: private, provider: userPools, operations: [read, create, update]}, {allow: private, provider: iam, operations: [read, create, delete, update]}, {allow: groups, groups: ["Admin"], operations: [read, create, delete, update]}]) {
+type CardPoint @model @searchable @auth(rules: [{allow: public, operations: [read]}, {allow: owner, ownerField: "owner", provider: userPools, operations: [read, create, delete, update]}, {allow: private, provider: userPools, operations: [read, create, update]}, {allow: private, provider: iam, operations: [read, create, delete, update]}, {allow: groups, groups: ["Admin"], operations: [read, create, delete, update]}]) {
   id: ID!
   name: String!
   description: String
@@ -285,14 +285,14 @@ type CardPoint @model @searchable @auth(rules: [{allow: owner, ownerField: "owne
   mood: Mood @hasOne
 }
 
-type Rating @model @auth(rules: [{allow: private}]) {
+type Rating @model @auth(rules: [{allow: public, operations: [read]}, {allow: private}]) {
   id: ID!
   CardID: ID @index(name: "byCard", queryField: "ratingByCardId", sortKeyFields: ["id"])
   UserID: ID @index(name: "byUser", queryField: "ratingByUserId", sortKeyFields: ["id"])
   score: Float
 }
 
-type Trending @model @auth(rules: [{allow: owner, ownerField: "owner", provider: userPools, operations: [read, create, delete, update]}, {allow: private, provider: userPools, operations: [read, create, update]}, {allow: private, provider: iam, operations: [read, create, delete, update]}, {allow: groups, groups: ["Admin"], operations: [read, create, delete, update]}]) {
+type Trending @model @auth(rules: [{allow: public, operations: [read]}, {allow: owner, ownerField: "owner", provider: userPools, operations: [read, create, delete, update]}, {allow: private, provider: userPools, operations: [read, create, update]}, {allow: private, provider: iam, operations: [read, create, delete, update]}, {allow: groups, groups: ["Admin"], operations: [read, create, delete, update]}]) {
   id: ID!
   name: String
   cards: [TrendingCards]
@@ -304,7 +304,7 @@ type EmojiModel @model @auth(rules: [{allow: owner, ownerField: "owner", provide
   cover: S3Object!
 }
 
-type Comment @model @auth(rules: [{allow: owner, ownerField: "owner", provider: userPools}, {allow: private, provider: userPools, operations: [read]}, {allow: private, provider: iam, operations: [read, create, delete, update]}]) {
+type Comment @model @auth(rules: [{allow: public, operations: [read]}, {allow: owner, ownerField: "owner", provider: userPools}, {allow: private, provider: userPools, operations: [read]}, {allow: private, provider: iam, operations: [read, create, delete, update]}]) {
   id: ID!
   title: String!
   cover: S3Object!
@@ -312,14 +312,14 @@ type Comment @model @auth(rules: [{allow: owner, ownerField: "owner", provider: 
   card: CardPoint @belongsTo
 }
 
-type TextComment @model @auth(rules: [{allow: owner, ownerField: "owner", provider: userPools}, {allow: private, provider: userPools, operations: [read]}, {allow: private, provider: iam, operations: [read, create, delete, update]}]) {
+type TextComment @model @auth(rules: [{allow: public, operations: [read]}, {allow: owner, ownerField: "owner", provider: userPools}, {allow: private, provider: userPools, operations: [read]}, {allow: private, provider: iam, operations: [read, create, delete, update]}]) {
   id: ID!
   body: String!
   user: UserProfile @belongsTo
   card: CardPoint @belongsTo
 }
 
-type UserInteraction @model @searchable @auth(rules: [{allow: owner, ownerField: "owner", provider: userPools}, {allow: private, provider: userPools, operations: [read, create, update]}, {allow: private, provider: iam, operations: [read, create, delete, update]}]) {
+type UserInteraction @model @searchable @auth(rules: [{allow: public, operations: [read]}, {allow: owner, ownerField: "owner", provider: userPools}, {allow: private, provider: userPools, operations: [read, create, update]}, {allow: private, provider: iam, operations: [read, create, delete, update]}]) {
   id: ID!
   isLiked: Boolean
   referenceUserKey: ID @index(name: "interactionByUserReference", queryField: "interactionByUserReference")
@@ -330,7 +330,7 @@ type UserInteraction @model @searchable @auth(rules: [{allow: owner, ownerField:
   user: UserProfile @belongsTo(fields: ["referenceUserKey"])
 }
 
-type UserMood @model @searchable @auth(rules: [{allow: owner, ownerField: "owner", provider: userPools}, {allow: private, provider: userPools, operations: [read, create, update]}, {allow: private, provider: iam, operations: [read, create, delete, update]}]) {
+type UserMood @model @searchable @auth(rules: [{allow: public, operations: [read]}, {allow: owner, ownerField: "owner", provider: userPools}, {allow: private, provider: userPools, operations: [read, create, update]}, {allow: private, provider: iam, operations: [read, create, delete, update]}]) {
   id: ID!
   value: Int
   mood: Mood @belongsTo
@@ -339,7 +339,7 @@ type UserMood @model @searchable @auth(rules: [{allow: owner, ownerField: "owner
   updatedAt: AWSDateTime
 }
 
-type CardShare @model @searchable @auth(rules: [{allow: private, provider: userPools, operations: [read, create, update, delete]}, {allow: private, provider: iam, operations: [read, create, delete, update]}]) {
+type CardShare @model @searchable @auth(rules: [{allow: public, operations: [read]}, {allow: private, provider: userPools, operations: [read, create, update, delete]}, {allow: private, provider: iam, operations: [read, create, delete, update]}]) {
   id: ID!
   sentByUserId: String!
   sentByUserProfilePic: S3Object
@@ -356,7 +356,7 @@ type CardShare @model @searchable @auth(rules: [{allow: private, provider: userP
   card: CardPoint @belongsTo
 }
 
-type MenuShare @model @searchable @auth(rules: [{allow: private, provider: userPools, operations: [read, create, update, delete]}, {allow: private, provider: iam, operations: [read, create, delete, update]}]) {
+type MenuShare @model @searchable @auth(rules: [{allow: public, operations: [read]}, {allow: private, provider: userPools, operations: [read, create, update, delete]}, {allow: private, provider: iam, operations: [read, create, delete, update]}]) {
   id: ID!
   sentByUserId: String!
   sentByUserProfilePic: S3Object
@@ -392,6 +392,7 @@ type TrendingCards {
   cover: S3Object!
   cardId: String!
   name: String!
+  description: String
 }
 
 type Query {

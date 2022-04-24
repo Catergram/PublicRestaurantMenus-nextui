@@ -10,21 +10,24 @@ import {getRestaurantData} from "../../store/actions/restaurantAction";
 export default function IndexPage() {
 	const dispatch = useDispatch();
 	const restaurant = useSelector((state) => state.restaurant.data);
+	const loading = useSelector((state) => state.restaurant.loading);
+	const error = useSelector((state) => state.restaurant.error);
 	//
 	useEffect(() => {
 		dispatch(getRestaurantData());
 	}, [dispatch]);
 
-	if(!restaurant.name){
+	if(loading){
 		return(<>Loading</>)
 	}
+
 	return (
 		<>
-			<Header />
+			{ !error ? <Header /> : null }
 			<Grid.Container css={{ background: "#fcfcfc" }} justify="center">
 				<Grid xs={1} />
 				<Grid xs={10}>
-					<RestaurantHome />
+					{ error ? error : <RestaurantHome /> }
 				</Grid>
 				<Grid xs={1} />
 			</Grid.Container>
