@@ -5,6 +5,37 @@ import { Card, Grid, Button, Image, Text, Col } from "@nextui-org/react"
 import Progress from "@components/Progress"
 import CardContent from "@components/CardContent"
 import { useMediaQuery } from '@hooks/useMediaQuery'
+import {API} from "aws-amplify";
+import {getRestaurant} from "../../../src/graphql/queries";
+
+export const getStaticPath = async () => {
+  return {
+    paths: [{id: '4c5f8cce-6fed-4c6e-ab89-447781cbcac6'}],
+    fallback: 'blocking'
+  }
+}
+
+export const getServerSideProps = async (context) => {
+  const id = context.params.id;
+  let data = null;
+  try {
+    const postData = await API.graphql({
+      query: getRestaurant,
+      variables: {id: id},
+      authMode: "API_KEY"
+    })
+
+    data = postData.data.getRestaurant;
+  } catch (error) {
+
+  }
+
+  return {
+    props: {
+      restaurant: data
+    }
+  }
+}
 
 const images = [
   {
@@ -34,7 +65,8 @@ const images = [
   },
 ]
 
-export default function Story() {
+export default function Story({restaurant}) {
+  console.log({restaurant})
   const router = useRouter()
   const { id } = router.query
   const [active, setActive] = useState(0);
@@ -88,12 +120,12 @@ export default function Story() {
       </Col>
       <Button
         auto
-        color="error"
+        light
         icon={<Image
           src="/images/close_circled_icon.svg"
           alt="Default Image"
-          width={30}
-          height={30}
+          width={48}
+          height={48}
           css={{
               filter: 'invert(100%)'
           }}
@@ -103,6 +135,7 @@ export default function Story() {
           left: '10px',
           top: isMobile ? '35px' : '10px',
           zIndex: '999',
+          h: 48
         }}
         onClick={() => {
           router.push(`/restaurant/${id}`)

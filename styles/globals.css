@@ -41,3 +41,60 @@
 html{
   background: #eaf1f6;
 }
+
+.full-menu-btn {
+  background: none;
+  border: none;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.full-menu-btn.open{
+  color: rgb(51, 51, 51);
+}
+.full-menu-btn-container{
+  position: absolute;
+  background: white;
+  padding: 0 10px;
+  min-width: 150px;
+  border-top: 5px;
+  margin-top: 12px;
+  border-radius: 0.5rem;
+  box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
+}
+.full-menu-btn-container a{
+  color: black;
+  width: 100%;
+  display: block;
+}
+.full-menu-btn-container a:hover{
+  background-color: rgb(249, 250, 251);
+}
+.full-menu-btn-container a p{
+  margin: 8px;
+}
+
+.relative{
+  position: relative;
+}
+.inline{
+  display: inline;
+}
+.inline-block{
+  display: inline-block;
+}
+.pull-right{ float: right; }
+.m-0{ margin: 3px;}
+.text-center { text-align: center}
+.h-24{
+  height: 6rem;
+}
+.justify-center {
+  justify-content: center;
+}
+.items-center {
+  align-items: center;
+}
+.flex {
+  display: flex;
+}

@@ -1,72 +1,50 @@
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
-import {
-  ChartBarIcon,
-  CursorClickIcon,
-  ViewGridIcon,
-} from '@heroicons/react/outline'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { Image } from '@nextui-org/react'
-import {useSelector} from "react-redux";
+import { Col, Row, Text } from "@nextui-org/react"
 
-const solutions = [
-  {
-    name: 'BreakFast',
-    href: '#',
-    icon: ChartBarIcon,
-  },
-  {
-    name: 'Lunch',
-    href: '#',
-    icon: CursorClickIcon,
-  },
-  {
-    name: 'Dinner',
-    href: '#',
-    icon: ViewGridIcon,
-  },
-
-]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Header() {
-  const restaurant = useSelector((state) => state.restaurant.data);
+export default function Header({restaurant}) {
   const { menus, file } = restaurant;
   return (
-    <Popover className="bg-white fixed w-full top-0 nav-bar-header">
-      <div className="max-w-full mx-auto px-4 sm:px-6" style={{ boxShadow: "rgb(2 1 1 / 10%) 0px 5px 20px -5px" }}>
-        <div className="flex justify-between items-center  py-2 md:justify-start md:space-x-10">
-          <div className="flex justify-start lg:w-0 lg:flex-1">
-            <a href="#">
-              <span className="sr-only">FULL MENU</span>
-              <Image
-                className="h-8 w-auto sm:h-14 m-0"
-                width={100}
-                height={172}
-                src={`https://dgh3t0irkf4qk.cloudfront.net/public/${file[0].key}`}
-              />
-            </a>
-          </div>
-          <Popover.Group as="nav" className="md:flex space-x-10">
-            <Popover className="relative">
+    <nav style={{ 'position': 'fixed', width: '100%', zIndex: 103}}>
+      <Row
+        fluid={true}
+        css={{pl: '1.5rem', pr: '1.5rem', pt: '0.5rem', pb: '0.3rem', background: '#fff', 'box-shadow': 'rgb(2 1 1 / 10%) 0px 5px 20px -5px;'}}
+      >
+        <Col direction={'left'}>
+          <Image
+            width={150}
+            height={56}
+            src={`https://dgh3t0irkf4qk.cloudfront.net/public/${file[0].key}`}
+            containerCss={{
+              display: 'inline-block'
+            }}
+          />
+        </Col>
+        <Col>
+          <Popover.Group as="nav" className="inline-block pull-right">
+            <Popover className="relative" style={{marginTop: 15}}>
               {({ open }) => (
                 <>
                   <Popover.Button
                     className={classNames(
-                      open ? 'text-gray' : 'text-black',
-                      'group bg-white rounded-md inline-flex items-center text-base font-medium hover:black focus:outline-none  '
+                      open ? 'open' : 'close',
+                      'full-menu-btn'
                     )}
                   >
-                    <span className='font-semibold text-xl leading-snug' >FULL MENU</span>
+                    <Text h4 >FULL MENU</Text>
                     <ChevronDownIcon
                       className={classNames(
-                        open ? 'text-black-600' : 'text-black-400',
-                        'ml-2 h-5 w-5 ml-0'
+                        open ? 'open' : 'close',
                       )}
                       aria-hidden="true"
+                      width={30}
                     />
                   </Popover.Button>
 
@@ -79,21 +57,16 @@ export default function Header() {
                     leaveFrom="opacity-100 translate-y-0"
                     leaveTo="opacity-0 translate-y-1"
                   >
-                    <Popover.Panel className="absolute z-10 -ml-4 mt-3 transform px-2 w-screen w-40 sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
-                      <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-                        <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-4">
+                    <Popover.Panel>
+                      <div className={"full-menu-btn-container"}>
                           {menus.map((item) => (
                             <a
                               key={item.name}
                               href={item.href}
-                              className="-m-3 p-0 flex items-start rounded-lg hover:bg-gray-50"
                             >
-                              <div className="ml-4">
-                                <p className="text-base font-medium text-gray-900">{item.name}</p>
-                              </div>
+                                <Text size={16} weight={'medium'} color="rgb(51, 51, 51)" css={{m: 8}}>{item.name}</Text>
                             </a>
                           ))}
-                        </div>
                       </div>
                     </Popover.Panel>
                   </Transition>
@@ -101,11 +74,8 @@ export default function Header() {
               )}
             </Popover>
           </Popover.Group>
-        </div>
-      </div>
-
-
-    </Popover >
-
+        </Col>
+      </Row>
+    </nav>
   )
 }

@@ -29,7 +29,7 @@ export default function ItemContent(props) {
 
 	return (
 		<Grid xs={12} sm={4} xl={3} md={3}>
-			<Card cover css={{ border: 'none' }}>
+			<Card cover css={{ border: 'none', w: 314, h: 471 }}>
 				<Card.Header
 					css={{
 						position: 'absolute',
@@ -53,19 +53,22 @@ export default function ItemContent(props) {
 						containerCss={{
 							d: key === active ? 'block' : 'none',
 							height: "100%",
-							maxHeight: "100vh",
+							w: 314,
+							h: 471,
 							'@xsMax': {
 								br: 0,
-								minHeight: '40vh',
 							},
 						}}
 						onClick={() => {
 							// router.push('/story')
 							router.push(`/restaurant/${id}/items/${props.id}`)
 						}}
+						css={{
+
+						}}
 					/>
 				))}
-				<Card.Footer css={{ position: "absolute", zIndex: 1, bottom: 5 }}>
+				<Card.Footer css={{ position: "absolute", zIndex: 1, bottom: 0, 'background': 'linear-gradient(360deg, rgba(0,0,0,0.5) 90%, rgba(255,255,255,0) 100%);' }}>
 					<Col>
 						<MenuItemFooter item={props}  />
 					</Col>

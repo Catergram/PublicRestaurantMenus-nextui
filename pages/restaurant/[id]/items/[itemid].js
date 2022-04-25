@@ -94,12 +94,12 @@ export default function Story() {
 			</Col>
 			<Button
 				auto
-				color="error"
+				light
 				icon={<Image
 					src="/images/close_circled_icon.svg"
 					alt="Default Image"
-					width={30}
-					height={30}
+					width={48}
+					height={48}
 					css={{
 						filter: 'invert(100%)'
 					}}
@@ -109,6 +109,7 @@ export default function Story() {
 					left: "10px",
 					top: isMobile ? "35px" : "10px",
 					zIndex: "999",
+					h: 48
 				}}
 				onClick={() => {
 					router.push(`/restaurant/${id}`)

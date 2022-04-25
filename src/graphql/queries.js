@@ -70,3 +70,13 @@ export const getRestaurant = /* GraphQL */ `
         }
     }
 `
+export const getListOfRestaurantsId = /* GraphQL */ `
+    query ListRestaurants {
+        listRestaurants {
+            items {
+                id
+            }
+            nextToken
+        }
+    }
+`
