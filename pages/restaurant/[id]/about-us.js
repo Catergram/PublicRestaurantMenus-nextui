@@ -5,37 +5,7 @@ import { Card, Grid, Button, Image, Text, Col } from "@nextui-org/react"
 import Progress from "@components/Progress"
 import CardContent from "@components/CardContent"
 import { useMediaQuery } from '@hooks/useMediaQuery'
-import {API} from "aws-amplify";
-import {getRestaurant} from "../../../src/graphql/queries";
 
-export const getStaticPath = async () => {
-  return {
-    paths: [{id: '4c5f8cce-6fed-4c6e-ab89-447781cbcac6'}],
-    fallback: 'blocking'
-  }
-}
-
-export const getServerSideProps = async (context) => {
-  const id = context.params.id;
-  let data = null;
-  try {
-    const postData = await API.graphql({
-      query: getRestaurant,
-      variables: {id: id},
-      authMode: "API_KEY"
-    })
-
-    data = postData.data.getRestaurant;
-  } catch (error) {
-
-  }
-
-  return {
-    props: {
-      restaurant: data
-    }
-  }
-}
 
 const images = [
   {
@@ -66,7 +36,6 @@ const images = [
 ]
 
 export default function Story({restaurant}) {
-  console.log({restaurant})
   const router = useRouter()
   const { id } = router.query
   const [active, setActive] = useState(0);
@@ -121,6 +90,7 @@ export default function Story({restaurant}) {
       <Button
         auto
         light
+        ripple={false}
         icon={<Image
           src="/images/close_circled_icon.svg"
           alt="Default Image"
@@ -277,18 +247,14 @@ export default function Story({restaurant}) {
             />
             <Card.Footer
               css={{
-                zIndex: 1,
-                position: 'absolute',
                 p: '$md $lg',
-                bottom: 0,
                 left: 0,
-                background:
-                  'linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(255, 255, 255, 0) 100%)',
                 '@xsMax': {
                   borderRadius: '0px',
                   p: '$lg $12'
                 }
               }}
+              className="menu-item-footer"
             >
               <CardContent storyButton />
             </Card.Footer>

@@ -95,6 +95,7 @@ export default function Story() {
 			<Button
 				auto
 				light
+				ripple={false}
 				icon={<Image
 					src="/images/close_circled_icon.svg"
 					alt="Default Image"

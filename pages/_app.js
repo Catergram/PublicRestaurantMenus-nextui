@@ -1,7 +1,7 @@
 import Layout from '@components/Layout';
 import { NextUIProvider } from '@nextui-org/react';
 
-// import 'tailwindcss/tailwind.css'
+import 'tailwindcss/tailwind.css'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {

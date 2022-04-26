@@ -4,32 +4,28 @@ import RestaurantHome from '@components/Restaurant/RestaurantHome';
 import Header from '@components/Header';
 import Footer from '@components/Footer';
 import {API} from "aws-amplify";
-import {getListOfRestaurantsId, getListRestaurants, getRestaurant} from "../../src/graphql/queries";
+import {getListOfRestaurantsId, getRestaurant} from "../../src/graphql/queries";
 
-export const getStaticPath = async () => {
-	let paths = []
-	try{
-		const postData = await API.graphql({
-			query: getListOfRestaurantsId,
-			authMode: "API_KEY"
-		})
-		paths = postData.data.listRestaurants.items.map((item) => {
-			return {
-				id: item.id
-			}
-		});
+export default function RestaurantHomePage({restaurant}) {
 
-	} catch (e) {
-		console.error(e)
-	}
-	return {
-		paths: paths,
-		fallback: 'blocking'
-	}
+	return (
+		<>
+			<Header restaurant={restaurant} />
+			<Grid.Container css={{ background: "#fcfcfc" }} justify="center">
+				<Grid xs={1} />
+				<Grid xs={10}>
+					<RestaurantHome restaurant={restaurant}/>
+				</Grid>
+				<Grid xs={1} />
+			</Grid.Container>
+			<Footer />
+		</>
+	)
+
 }
 
-export const getServerSideProps = async (context) => {
-	const id = context.params.id;
+export const getStaticProps = async ({params}) => {
+	const id = params.id;
 	let data = null;
 	try {
 		const postData = await API.graphql({
@@ -46,24 +42,32 @@ export const getServerSideProps = async (context) => {
 	return {
 		props: {
 			restaurant: data,
-		}
+		},
+		// - At most once every 10 seconds
+		revalidate: 10, // In seconds
 	}
 }
 
-export default function IndexPage({restaurant}) {
+export const getStaticPaths = async () => {
+	let paths = []
+	try{
+		const postData = await API.graphql({
+			query: getListOfRestaurantsId,
+			authMode: "API_KEY"
+		})
+		paths = postData.data.listRestaurants.items.map((item) => {
+			return {
+				params: {
+					id: item.id
+				}
+			}
+		}).filter(({ params }) => !!params.id);
 
-	return (
-		<>
-			<Header restaurant={restaurant} />
-			<Grid.Container css={{ background: "#fcfcfc" }} justify="center">
-				<Grid xs={1} />
-				<Grid xs={10}>
-					<RestaurantHome restaurant={restaurant}/>
-				</Grid>
-				<Grid xs={1} />
-			</Grid.Container>
-			<Footer />
-		</>
-	)
-
+	} catch (e) {
+		console.error(e)
+	}
+	return {
+		paths: paths,
+		fallback: false
+	}
 }

@@ -16,12 +16,56 @@ export default function ItemFooter({ storyButton, textColorBlack, item }) {
     <>
       <Row>
         <Col>
-          <Text b size={32} css={{ color: !textColorBlack ? "$white" : "$black" }}>
+          <Text b size={26} css={{ color: !textColorBlack ? "$white" : "$black" }}>
             {item.name}
           </Text>
-          <Text size={24} css={{ color: !textColorBlack ? "$white" : "$black" }}>
-            {item.restaurant.name}
-          </Text>
+          <Row>
+            <Col>
+              <Text size={18} css={{ color: !textColorBlack ? "$white" : "$black" }}>
+                {item.restaurant.name}
+              </Text>
+            </Col>
+            {!storyButton && (
+              <Col span={4}>
+                <Row
+                  justify="center"
+                  align="flex-start"
+                  gap={2}
+                  style={{ margin: '6px 12px 6px 0'}}
+                >
+                  <Image
+                    src="/images/share.svg"
+                    alt="Default Image"
+                    width={17}
+                    height={17}
+                    className="cursor-pointer rounded-none"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleClose();
+                    }}
+                    containerCss={{
+                      borderRadius: 0
+                    }}
+                  />
+                  <Image
+                    src="/images/like.svg"
+                    alt="Default Image"
+                    width={17}
+                    height={17}
+                    className="cursor-pointer rounded-none"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleClose();
+                    }}
+                    containerCss={{
+                      borderRadius: 0
+                    }}
+                  />
+                </Row>
+              </Col>
+            )}
+          </Row>
+
           <Grid.Container gap={isSm ? 1.1 : 1.8} justify="center">
             <Row>
               <Text
@@ -34,7 +78,7 @@ export default function ItemFooter({ storyButton, textColorBlack, item }) {
                   }
                 }}
               >
-                ${item.price}
+                ${Math.round(item.price)}
               </Text>
               {!storyButton && (
                 <>
@@ -83,41 +127,6 @@ export default function ItemFooter({ storyButton, textColorBlack, item }) {
           </Text>
           }
         </Col>
-        {!storyButton && (
-          <Col>
-            <Row
-              justify="center"
-              align="flex-start"
-              gap={0}
-              style={{ margin: "12px 0" }}
-            >
-              <Image
-                src="/images/share.svg"
-                alt="Default Image"
-                width={24}
-                height={24}
-                className="cursor-pointer rounded-none"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleClose();
-                }}
-              />
-            </Row>
-            <Row justify="center" align="flex-start">
-              <Image
-                src="/images/like.svg"
-                alt="Default Image"
-                width={24}
-                height={24}
-                className="cursor-pointer rounded-none"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleClose();
-                }}
-              />
-            </Row>
-          </Col>
-        )}
       </Row>
 
       {!!isOpen && <ShareModal isOpen={isOpen} handleClose={handleClose} />}

@@ -1,9 +1,7 @@
-<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<rect width="21" height="21" fill="url(#pattern0)"/>
-<defs>
-<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image0_303_154" transform="scale(0.0166667)"/>
-</pattern>
-<image id="image0_303_154" width="60" height="60" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAPKADAAQAAAABAAAAPAAAAACL3+lcAAABmFBMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Ak9VoAAAAh3RSTlMAAQIDBQYHCAkKDA0OERITFBcZHiAhIiUoKS0vMDEyMzQ5Ojw+P0JDREZHS05PUVJUWl1eZGZnaGprbXN0dXl6fYCBg4WGh42PkJGSk5SXmJydoKGnqaytsbS3uLm/wsPFxsjJyszS1NXW2Nrc3eDh4+Tl5+jp6uvt7/Hy8/T19/j5+vv8/f5aSv8gAAAByElEQVRIx6XXZ1PCQBAGYKKICio2rNi7YkfsvSsW7IpiQewFey+Iun9bhYgJSc7c7ft1eWaYXLK7p9GQU5WlYU/DZToCw2kKAsNhEgLDTjwCg9uAwLAWjcCwrEVgmI9AYHBwCAyjGAz9GAwdGAw2DP6oR2DwVyMwvJarY5ypytZj3xRjeCr8Fxprxj3PIJs7M1Emtmx8gnKuM5RpzrwfyDlLVaDZTvg/x8ly1DDyDmqyZ5Ta/BNQGU9cuLW+guq4YsW2B2jijBLaXqDLYuSfbQbazIZaS9EbNYYJ3iZcAEMGg9jBYmEgYEuYLP+33Sx2JvjAKlnsAn9U6wx2hX9JMhmsK4Y/pyF6G/owOC+13Q19kmZqe/TXDDpprVfQhlYprbABcg90VtR6TcSf3oR/MU8FwiZgkVcv7qnm4jSdZNyUibpPt4zcH67QyQ86i7h1TYbLW3uu6hG7JKYnNp3ylGwKb7jbwuq5VUsYse2STi9o9O9jcaT53CcdE1eh4kEecbiPyFTvf4tzeuJmMC23xPn4B9nGsj7yh1/HtLgGao+lbCvzT+25mLwNbek1ithXyXpN+D7eWuYLCnw2sl+NoBVxKetCXAe/AAfdWKataT5WAAAAAElFTkSuQmCC"/>
-</defs>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/Share/White</title>
+    <g id="Icons/Share/White" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M10.5452319,0 L10.5452319,5.77553667 L10.5081853,5.77746795 C3.61142767,6.13459572 0,10.1155221 0,17.4355653 L0,20 L1.71446065,18.1866709 L1.97398865,17.9197883 C4.15982733,15.7347819 6.92382741,14.5251586 10.3054187,14.2910365 L10.5452319,14.2765123 L10.5452319,20 L20,10 L10.5452319,0 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero"></path>
+    </g>
 </svg>

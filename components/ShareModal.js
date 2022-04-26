@@ -15,7 +15,7 @@ export default function ShareModal({ isOpen, handleClose }) {
       >
         <Modal.Header>
           <img
-            src="./images/app-store.png"
+            src="/images/app-store.png"
             alt=""
           />
         </Modal.Header>
@@ -23,7 +23,7 @@ export default function ShareModal({ isOpen, handleClose }) {
           <Row justify="space-between">
             <div>
               <img
-                src="./images/google-play.png"
+                src="/images/google-play.png"
                 alt=""
               />
             </div>
